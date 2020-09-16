@@ -1,0 +1,29 @@
+.logo--footer {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.footer-nav__link {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.footer-nav__item:not(:last-of-type)::after {
+  content: '';
+  display: inline-block;
+  height: 18px;
+  width: 2px;
+  background-color: #fff;
+  position: relative;
+  top: 4px;
+}
+
+.social__link {
+  padding: 0.625rem;
+  transition: .3s;
+}
+
+.social__link:hover {
+  transform: scale(1.15);
+  transition: .3s;
+}

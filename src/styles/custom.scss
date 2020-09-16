@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$grays: (
+  '400': #e3e3e3,
+  '600': #626262,
+  '800': #8d8c8c
+);
+
+$blue: #191a30;  // blue
+$blue-dark: #0a0a14;  // blue-dark
+$red: #e03432; //red
+$black: #181818; //black
+$gray-light: #e3e3e3; // gray-400
+$gray: #e3e3e3; // gray-600
+$gray-dark:  #8d8c8c; // gray-800
+$white-light: #eeeeee; // gray-100
+$white-dark: #f5f5f5; // gray-300
+
+$yiq-text-dark: #181818; // color theme light
+
+$colors: (
+        "blue": $blue,
+        "red": $red,
+        "black": $black,
+        "gray": $gray,
+        "gray-dark": $gray-dark
+);
+
+$theme-colors: (
+        "primary": $blue,
+        "secondary": $gray,
+        "danger": $red,
+        "light": $white,
+        "dark": $blue
+);
+
+// sapcers
+$spacers: (
+        5: ($spacer * 2.5),
+        7: ($spacer * 4),
+        9: ($spacer * 4,375)
+);
+
+// Typography
+//$line-height-lg: 1.2;
+//$line-height-sm: 1.2;
+$font-family-base: 'Rubik';
+$line-height-base: 1.2;
+
+//$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2.25;
+//$h3-font-size:                $font-size-base * 1.75 !default;
+//$h4-font-size:                $font-size-base * 1.5 !default;
+//$h5-font-size:                $font-size-base * 1.25 !default;
+//$h6-font-size:                $font-size-base !default;
+
+// Links
+$link-color: $white;
+$link-hover-color: darken($link-color, 15%);
+
+// grid
+$container-max-widths: (sm: 420px, md: 720px, lg: 960px, xl: 1260px);
+$grid-gutter-width: 20px;
+
+// Cards
+$card-group-margin: $grid-gutter-width / 2;
+$card-deck-margin: $card-group-margin;
+
+// navbar
+$navbar-padding-y: $spacer * 1.5;
+$navbar-padding-x: 0;
+
+$navbar-dark-color: $gray-dark;
+$navbar-dark-hover-color: rgba($gray-dark, .75);
+$navbar-dark-active-color: $white;
+
+//buttons
+$btn-font-weight: 500;
+$btn-font-size: 1.125rem;
+$btn-padding-x: 2.75rem;
+
+$btn-padding-y-lg: 0.825rem;
+$btn-padding-x-lg: 3rem;
+$btn-font-size-lg: 1.125rem;
+$btn-line-height-lg: 1.2;
+
+
+#root {
+  padding-top: 88.4px;
+  background: $blue-dark;
+  color: $white;
+}
+
+.main {
+  padding-bottom: 5.25rem;
+}
