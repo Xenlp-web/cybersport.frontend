@@ -4,8 +4,31 @@
 $slick-font-path: "~slick-carousel/slick/fonts/";
 $slick-loader-path: "~slick-carousel/slick/";
 
+$slick-prev-character: '';
+$slick-next-character: '';
+
 @import "~slick-carousel/slick/slick";
 @import "~slick-carousel/slick/slick-theme";
+
+.slick-prev,
+.slick-next {
+  width: 13px;
+  height: 26px;
+  z-index: 10;
+  &:before {
+    width: 13px;
+    height: 26px;
+  }
+}
+
+.slick-prev {
+  background: url("~slick-carousel/../../src/Icons/slide-prev.svg") no-repeat center;
+  background-size: cover;
+}
+.slick-next {
+  background: url("~slick-carousel/../../src/Icons/slide-next.svg") no-repeat center;
+  background-size: cover;
+}
 
 @import "custom";
 

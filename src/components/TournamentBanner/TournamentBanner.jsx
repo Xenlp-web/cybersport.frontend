@@ -6,7 +6,7 @@ import './tournament-banner.scss';
     const tournamentBannerInfo = [
         {
             images: 'img-1.png',
-            title: 'PUBG Mobile',
+            title: 'Arcade Cup #10',
             stage: 'Финал',
             date: '22 августа, в 18:50',
             mode: '1 против всех',
@@ -15,7 +15,7 @@ import './tournament-banner.scss';
         },
         {
             images: 'img-1.png',
-            title: 'Arcade Cup #10',
+            title: 'Arcade Cup #12',
             stage: 'Финал',
             date: '22 августа, в 18:50',
             mode: '1 против всех',
@@ -25,8 +25,8 @@ import './tournament-banner.scss';
     ];
 
     const slides = tournamentBannerInfo.map(({images, title, stage, date, mode, award, price}, index) =>  (
-        <Container>
-            <Jumbotron fluid>
+        <Container key={index}>
+            <Jumbotron className='tournament-banner-content' fluid style={{backgroundImage: `url(${require("../../images/tournament_banner/" + images).default})`}}>
                 <div className='text-white jumbotron__text-content d-flex align-items-start flex-column'>
                     <p className="tournament-banner__date">
                         {date}
@@ -37,7 +37,7 @@ import './tournament-banner.scss';
                     <p className='tournament-banner__stage text-danger'>
                         {stage}
                     </p>
-                    <div className="d-flex align-items-center w-100 justify-content-between">
+                    <div className="d-flex align-items-center w-100 justify-content-between mb-4">
                         <span className="tournament-banner__mode">
                             {mode}
                         </span>
