@@ -60,7 +60,7 @@ const TournamentBanner = () => {
         };
 
         return(
-            <Container>
+            <Container className='mb-6'>
                 <Row>
                     <Slider className='w-100 tournament-banner' {...settings}>
                         {slides}

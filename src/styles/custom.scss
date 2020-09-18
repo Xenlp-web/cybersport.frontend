@@ -37,8 +37,9 @@ $theme-colors: (
 // sapcers
 $spacers: (
         5: ($spacer * 2.5),
+        6: ($spacer * 3.5),
         7: ($spacer * 4),
-        9: ($spacer * 4,375)
+        9: ($spacer * 4.375)
 );
 
 // Typography
@@ -93,4 +94,8 @@ $btn-line-height-lg: 1.2;
 
 .main {
   padding-bottom: 5.25rem;
+}
+
+.text-light-gray {
+  color: #f8f8f8;
 }

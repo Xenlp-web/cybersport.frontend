@@ -21,6 +21,10 @@ $slick-next-character: '';
   }
 }
 
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+  opacity: .75;
+}
+
 .slick-prev {
   background: url("~slick-carousel/../../src/Icons/slide-prev.svg") no-repeat center;
   background-size: cover;
@@ -28,6 +32,31 @@ $slick-next-character: '';
 .slick-next {
   background: url("~slick-carousel/../../src/Icons/slide-next.svg") no-repeat center;
   background-size: cover;
+}
+
+.slick-dots {
+  bottom: 25px;
+  li {
+    width: 10px;
+    height: 10px;
+    button {
+      width: 10px;
+      height: 10px;
+      border: 1px solid #CFCFCF;
+      border-radius: 50%;
+      background-color: transparent;
+      transition: .2s;
+      &:hover, &:focus {
+        border-color: $white;
+      }
+      &:before {
+        content: none;
+      }
+    }
+    &.slick-active button {
+      background-color: #CFCFCF;
+    }
+  }
 }
 
 @import "custom";
