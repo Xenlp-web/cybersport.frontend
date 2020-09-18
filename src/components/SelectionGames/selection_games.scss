@@ -1,0 +1,39 @@
+.slider_card {
+  width: 20%;
+}
+
+.container-games_card {
+  padding-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.games_card .slick-slide > * {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.game-card-body {
+  background: none;
+}
+.game-card-body .card-img-top {
+  border-bottom-left-radius: calc(0.25rem - 1px);
+  border-bottom-right-radius: calc(0.25rem - 1px);
+  overflow: hidden;
+  margin-bottom: .625rem;
+  height: 150px;
+}
+
+.s-game-card:focus {outline: none;}
+
+.s-game-card--disabled {
+  position: relative;
+  &-text {
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10;
+    font-weight: 500;
+    font-size: 24px;
+    & > span {
+      transform: translateY(calc(-100% + 10px));
+    }
+  }
+}

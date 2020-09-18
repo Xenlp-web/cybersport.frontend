@@ -1,0 +1,40 @@
+.tournament-banner-content {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 5.5rem;
+  padding-bottom: 0;
+  padding-top: 60px;
+  margin: 0;
+  height: 564px;
+  display: flex;
+  align-items: center;
+}
+
+.tournament-banner__date {
+  font-size: 1.125rem;
+  margin-bottom: .625rem;
+  font-weight: 500;
+}
+
+.tournament-banner-content .jumbotron__title {
+  margin-bottom: .625rem;
+}
+
+.tournament-banner__stage {
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
+
+.tournament-banner__mode {
+  margin-right: 1.75rem;
+}
+
+.tournament-banner {
+  & .slick-prev {
+    left: 40px;
+  }
+  & .slick-next {
+    right: 40px;
+  }
+}

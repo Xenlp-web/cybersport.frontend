@@ -1,0 +1,35 @@
+.jumbotron {
+  padding-top: 5.5rem;
+  padding-bottom: 8.625rem;
+  background: none;
+  &__wrapper {
+    margin-top: .625rem;
+    margin-bottom: 1.25rem;
+    padding-top: 	1.25rem;
+    padding-bottom: 3.25rem;
+    background: url("../../images/backgrounds/bg-jumbotron.png") no-repeat center;
+    background-size: cover;
+  }
+  &__text-content {
+    max-width: 570px;
+  }
+  &__online.bg-white {
+    border-radius: 0.375rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 2.625rem;
+  }
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
+  &__descr {
+    font-size: 1.75rem;
+    margin-bottom: 2.25rem;
+    letter-spacing: -0.1rem;
+  }
+  &__bonus {
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+}

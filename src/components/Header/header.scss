@@ -1,0 +1,48 @@
+.logo {
+  height: 32px;
+  &--header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.header {
+  &-nav__link {
+    font-size: 1.25rem;
+  }
+  &-divider {
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    -webkit-user-select: none;
+  }
+}
+
+.user-info__email {
+  font-size: 1.125rem;
+}
+
+.user-info__avatar {
+  width: 37px;
+  height: 37px;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
+.user-info__tickets {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-right: 1.875rem;
+}
+
+.rec {
+  width: 14px;
+  height: 14px;
+}
+
+.user-info__avatar-images {
+  width: 100%;
+  height: auto;
+}
