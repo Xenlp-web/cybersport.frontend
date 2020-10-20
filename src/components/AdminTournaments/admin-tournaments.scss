@@ -1,0 +1,23 @@
+.tournaments-list__search > *:not(:last-child) {
+  margin-right: .625rem;
+}
+
+.tournaments-list__search, .tournaments-list__wrapper {
+  border-radius: .325rem;
+  padding: 1.25rem;
+}
+
+.tournaments-list__search .form-control {
+  background-color: #E3E3E3;
+}
+
+@media screen and (max-width: 767px) {
+  .tournaments-list__search > *:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .btn--refresh, .btn--clear {
+    padding: .375rem .75rem;
+    font-size: .875rem;
+  }
+}

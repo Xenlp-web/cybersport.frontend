@@ -1,0 +1,43 @@
+.add_tournaments__row > * {
+  width: calc(20% - 20px);
+  margin: 10px;
+}
+
+.add_tournaments__wrapper {
+  border-radius: .325rem;
+  padding: 1.25rem;
+}
+
+.add_tournaments__row .form-control {
+  background-color: #E3E3E3;
+}
+
+@media screen and (max-width: 1439px) {
+  .add_tournaments__row > * {
+    width: calc(25% - 20px);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .add_tournaments__row > * {
+    width: calc(33.3333% - 20px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .add_tournaments__row > * {
+    width: calc(50% - 20px);
+    font-size: .875rem;
+  }
+
+  .btn--add, .btn--clear {
+    padding: .375rem .75rem;
+    font-size: .875rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .add_tournaments__row > * {
+    width: 100%;
+  }
+}

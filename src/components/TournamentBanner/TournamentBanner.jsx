@@ -37,7 +37,7 @@ import './tournament-banner.scss';
                     <p className='tournament-banner__stage text-danger'>
                         {stage}
                     </p>
-                    <div className="d-flex align-items-center w-100 justify-content-between mb-4">
+                    <div className="d-flex align-items-center w-100 justify-content-md-between mb-3 mb-md-4">
                         <span className="tournament-banner__mode">
                             {mode}
                         </span>
@@ -56,11 +56,20 @@ const TournamentBanner = () => {
             slidesToShow: 1,
             slidesToScroll: 1,
             lazyLoad: true,
-            dots: true
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        dots: false
+                    }
+                }
+            ]
         };
 
         return(
-            <Container className='mb-6'>
+            <Container className='mb-3 mb-md-6'>
                 <Row>
                     <Slider className='w-100 tournament-banner' {...settings}>
                         {slides}

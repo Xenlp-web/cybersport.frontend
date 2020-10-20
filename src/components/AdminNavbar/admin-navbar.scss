@@ -1,0 +1,16 @@
+.navbar-light .navbar-nav .admin-nav__link {
+  padding: .5rem .625rem;
+  color: #BCBCBC;
+}
+
+.navbar-light .navbar-nav .admin-nav__link:hover,
+.navbar-light .navbar-nav .admin-nav__link:focus,
+.navbar-light .navbar-nav .admin-nav__link.active {
+  color: inherit;
+}
+
+@media screen and (max-width: 1439px){
+  .navbar-light .navbar-nav .admin-nav__link {
+    font-size: .875rem;
+  }
+}

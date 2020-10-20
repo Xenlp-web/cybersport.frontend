@@ -27,3 +27,40 @@
   transform: scale(1.15);
   transition: .3s;
 }
+
+@media screen and (max-width: 1439px) {
+  .footer__content {
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-nav__link {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer__content {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .footer-nav__item:not(:last-of-type)::after {
+    height: 12px;
+    top: 2px;
+  }
+
+  .logo--footer {
+    margin-bottom: .5rem;
+  }
+
+  .footer__content > .nav {
+    justify-content: center;
+  }
+
+  .footer__content {
+    order: initial;
+  }
+}

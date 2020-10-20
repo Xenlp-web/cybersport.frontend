@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const pathResolve = (...args) => path.resolve(process.cwd(), ...args);
+
 module.exports = {
   entry: "./src/index.jsx",
   output: {
@@ -52,5 +54,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss'],
+    alias: {
+      '@app': pathResolve('src'),
+      '@templates': pathResolve('src/components'),
+      '@config': pathResolve('config'),
+      '@test': pathResolve('config/jest'),
+      '@public': pathResolve('public'),
+      styles: pathResolve('src/styles'),
+    }
+  }
 };

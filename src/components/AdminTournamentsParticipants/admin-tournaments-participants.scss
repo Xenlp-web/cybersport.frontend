@@ -1,0 +1,28 @@
+.participants-tournament > *:not(:last-child) {
+  margin-right: .625rem;
+}
+
+.participants-tournament {
+  border-radius: .325rem;
+  padding: 1.25rem;
+}
+
+.participants-tournament .form-control {
+  background-color: #E3E3E3;
+}
+
+@media screen and (max-width: 767px){
+  .participants-tournament > .btn {
+    padding: .375rem .1rem;
+    font-size: .875rem;
+  }
+
+  .participants-tournament {
+    flex-wrap: wrap;
+  }
+
+  .participants-tournament > .form-control {
+    margin-bottom: .5rem;
+    width: 100%;
+  }
+}

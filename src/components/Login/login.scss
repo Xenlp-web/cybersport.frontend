@@ -1,1 +1,80 @@
-//df
+.modal-header {
+  border: none;
+  padding: 0;
+  text-align: center;
+  display: flex;
+}
+
+.modal-content {
+  padding: 2.25rem 1.875rem;
+}
+
+.modal-dialog.modal-sm {
+  max-width: 420px;
+}
+
+.modal-logo {
+  width: 100%;
+}
+
+button.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.modal-logo > img {
+  margin-bottom: 2.25rem;
+}
+
+.modal-logo > h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-control.form-control-lg {
+  background-color: #F0F0F0;
+  border-color: #F0F0F0;
+}
+
+.form-group {margin-bottom: .625rem;}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control-lg:not(:last-of-type) {
+  margin-bottom: 1.25rem;
+}
+
+.modal-link {
+  text-decoration: underline;
+  color: #191A30;
+  margin-bottom: 1.625rem;
+  text-align: center;
+}
+
+.form-control.form-control-lg {
+  font-size: 1.125rem;
+  border: none !important;
+  padding: .5rem .625rem;
+  height: 40px;
+}
+
+.custom-control-label {
+  font-size: 14px;
+  padding-top: 2px;
+}
+
+.custom-control {
+  margin-top: 1.5rem;
+  margin-bottom: 1.875rem;
+}
+
+@media screen and (max-width: 575px) {
+  .custom-control-label {
+    font-size: 11px;
+    padding-top: 4px;
+  }
+}

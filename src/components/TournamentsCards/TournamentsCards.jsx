@@ -31,14 +31,15 @@ const TournamentsCards = (props) => {
                                 </div>
                             <div className="t-card-group h4">
                                 <span className="t-card__title">{title}</span>
-                                <span className="t-card__time text-danger"><span className="clock"> </span>{time}</span>
+                                <span className={(typeCard === 'past') ? 't-card__time text-gray' : 't-card__time text-danger'}><span className="clock"> </span>{time}</span>
                             </div>
                             <div className="t-card-group">
                                 <span className="t-card__mode text-light-gray">{mode}</span>
-                                <span className="t-card__price-kill">{priceForKill}₽ за килл</span>
+                                <span className={(typeCard === 'past') ? 't-card__price-kill text-gray' : 't-card__price-kill text-danger'}>{priceForKill}₽ за килл</span>
                             </div>
                             <Card.Footer>
-                                <Button variant="danger">Участвовать за {costTickets} билет</Button>
+                                <Button variant={(typeCard === 'past') ? 'secondary' : 'danger'}>{(typeCard === 'past') ? 'Завершен' :
+                                  'Участвовать за ' + costTickets + ' билет'}</Button>
                             </Card.Footer>
                         </Card.Body>
                     </Card>

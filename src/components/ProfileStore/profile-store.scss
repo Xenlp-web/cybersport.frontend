@@ -1,0 +1,118 @@
+.profile_store-info__wrap:not(:last-of-type) {
+  margin-right: 3.75rem;
+}
+
+ .profile_store-info__wrap {
+   padding: 0 10px;
+   margin-bottom: 1.25rem;
+ }
+.profile_store-info__wrap > *:not(:last-of-type) {
+  margin-bottom: .5rem;
+}
+
+ .profile_store-info__title {
+   font-size: 1.25rem;
+   color: #BCBCBC;
+ }
+
+ .profile_store-info__wrap > * {
+   display: block;
+ }
+.profile_store-info__descr--small {
+  font-size: 1.5rem;
+}
+
+.profile_store-info__descr--small > .tickets {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  top: 4px;
+}
+
+.store_card {
+  height: 100%;
+  margin-top: 70px;
+  //background: #191a30, url(./../../images/backgrounds/bg-store-card.png)no-repeat center/auto;
+}
+
+.tickets--white {
+  background-image: url('./../../Icons/tickets-white.svg') !important;
+}
+
+.store_card-head {
+  height: 150px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.store_card-head > img {
+  width: 100%;
+  height: auto;
+}
+
+.store_card .card-body {
+  margin-top: -65px;
+  padding-bottom: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.store_card-full_price {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: .25rem;
+}
+
+.store_card-price {
+  font-size: 1.125rem;
+  margin-bottom: .875rem;
+}
+
+.row--store {
+  margin-bottom: 65px;
+}
+
+@media screen and (max-width: 1439px) {
+  .store_card-full_price {
+    font-size: 1.5rem;
+  }
+
+  .store_card .card-body {margin-top: -75px;}
+
+  .store_card-head {
+    height: 120px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .store_card-head {
+    display: none !important;
+  }
+
+  .store_card {
+    margin-top: 0;
+  }
+
+  .store_card .card-body {
+    margin-top: 0;
+  }
+
+  .row--store {
+    margin-bottom: 0;
+  }
+
+  .row--store > * {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .profile_store-info__wrap:not(:last-of-type) {
+    margin-right: auto;
+  }
+
+  .store_card-full_price {
+    font-size: 1.25rem;
+    margin-bottom: .625rem;
+  }
+}

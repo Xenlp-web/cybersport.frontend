@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, CardDeck } from 'react-bootstrap';
 import Jumbo from "../Jumbo/Jumbo.jsx";
 import AdvantageCard from "../AdvantageCard/AdvantageCard.jsx";
+
 import './home.scss';
 
 const ADVANTAGECARD = [
@@ -20,7 +21,7 @@ const ADVANTAGECARD = [
         title: 'Выплаты удобным способом',
         text: 'Мы выплачиваем деньги на Qiwi карты и кошельки, Яндекс.Деньги и банковские карты'
     }
-]
+];
 
 const Home = () => (
     <>

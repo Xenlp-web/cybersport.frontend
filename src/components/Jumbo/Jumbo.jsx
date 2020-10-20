@@ -9,7 +9,7 @@ const Jumbo = () => (
         <Jumbotron fluid>
             <Container>
                 <div className='text-white jumbotron__text-content d-flex align-items-start flex-column'>
-                    <div className="jumbotron__online bg-white d-flex align-items-center">
+                    <div className="jumbotron__online bg-white d-none d-md-flex align-items-center">
                         <span className='joystick'> </span>
                         <span className='text-dark'>Сейчас играют<b className='px-2'>{ONLINE}</b>игроков</span>
                     </div>
@@ -20,7 +20,7 @@ const Jumbo = () => (
                         Бонусы / Разные режимы / Без комиссий
                     </p>
                     <div className="d-flex align-items-center">
-                        <Button className='mr-4' variant="danger" size="lg">Войти прямо сейчас</Button>
+                        <Button className='mr-2 mr-sm-4' variant="danger" size="lg">Войти прямо сейчас</Button>
                         <span className='jumbotron__bonus'>+ получить бонус</span>
                     </div>
                 </div>

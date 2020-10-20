@@ -32,10 +32,10 @@ const socialLinks = SOCIALLINKS.map(({ title, href, icon }) => (
 ));
 
 const Footer = () => (
-  <footer className="footer py-7 bg-dark">
+  <footer className="footer py-3 py-md-7 bg-dark">
     <Container>
       <Row className='align-items-center w-100'>
-        <NavLink className='logo logo--footer mr-7' to="/">
+        <NavLink className='logo logo--footer mx-auto mb-2 mb-md-0 ml-md-0 mr-md-7' to="/">
           <Image src={LogoIcon} />
         </NavLink>
         <div className="footer__content">
@@ -46,7 +46,7 @@ const Footer = () => (
             {footerLinks}
           </Nav>
         </div>
-        <Nav className="nav__social ml-auto" as="ul">
+        <Nav className="nav__social m-auto ml-md-auto mr-md-0" as="ul">
           {socialLinks}
         </Nav>
       </Row>

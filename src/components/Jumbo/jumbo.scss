@@ -1,6 +1,7 @@
 .jumbotron {
-  padding-top: 5.5rem;
-  padding-bottom: 8.625rem;
+  height: 850px;
+  align-items: center;
+  display: flex;
   background: none;
   &__wrapper {
     margin-top: .625rem;
@@ -31,5 +32,121 @@
   &__bonus {
     font-weight: 500;
     font-size: 1.125rem;
+  }
+}
+
+@media screen and (max-width: 1439px){
+  .jumbotron__wrapper {background-size: cover;}
+
+  .jumbotron__online.bg-white {margin-bottom: 1rem;}
+
+  .jumbotron__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .jumbotron__descr {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .jumbotron__text-content {max-width: 100%;}
+
+  .jumbotron__text-content > h1 {max-width: 375px;}
+
+  .btn-lg, .btn-group-lg > .btn {
+    padding: .625rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  .jumbotron__bonus {font-size: 1rem;}
+
+  .jumbotron {
+    height: 590px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .jumbotron {
+    height: 390px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .jumbotron__wrapper {
+    background-size: auto 100%;
+  }
+
+  .jumbotron__descr {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .jumbotron__text-content > h1 {
+    max-width: 325px;
+  }
+
+  .jumbotron__bonus {
+    font-size: .875rem;
+  }
+
+  .jumbotron__descr {
+    font-size: 1rem;
+  }
+
+  .jumbotron {
+    height: 295px;
+  }
+
+  .jumbotron__wrapper {
+    padding-bottom: 1.25rem;
+  }
+
+  .jumbotron__title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .jumbotron {
+    height: 310px;
+    padding: 0 .625rem;
+    margin: 0;
+  }
+
+  .jumbotron__wrapper {
+    background: url("../../images/backgrounds/bg-jumbotron-mobile.png") no-repeat center;
+    background-size: 100% auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  .jumbotron__text-content > h1 {
+    font-size: 1rem;
+    margin-bottom: .325rem;
+    letter-spacing: inherit;
+    max-width: 200px;
+  }
+
+  .jumbotron__descr {
+    font-size: .75rem;
+    margin-bottom: 1rem;
+    letter-spacing: .5px;
+    max-width: 165px;
+  }
+
+  .btn-lg, .btn-group-lg > .btn {
+    font-size: .875rem;
+    padding: .375rem 2rem;
+  }
+
+  .jumbotron__bonus {
+    font-size: .75rem;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .jumbotron {
+    height: 205px;
   }
 }

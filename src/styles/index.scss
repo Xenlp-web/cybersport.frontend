@@ -60,10 +60,18 @@ $slick-next-character: '';
 }
 
 @import "custom";
-
 @import "~bootstrap/scss/bootstrap";
+
+
 
 .h2, h2 {
   margin-bottom: 1.75rem;
+}
+
+@media screen and (max-width: 767px) {
+  .h2, h2 {
+    margin-bottom: .625rem;
+    font-size: 1.25rem;
+  }
 }
 

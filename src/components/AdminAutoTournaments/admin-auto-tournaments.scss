@@ -1,0 +1,129 @@
+.t-auto_tuning {
+  border-radius: .3rem;
+  padding: 1.875rem 1.25rem 1.75rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.t-auto_tuning__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.t-auto_tuning__tournaments {
+  font-size: 1.5rem;
+}
+
+.t-auto_tuning-days__item, .t-auto_tuning-time__item {
+  font-size: 1.125rem;
+  color: #A9A9A9;
+  padding: 0 .325rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.t-auto_tuning-days__item.active, .t-auto_tuning-time__item.active {
+  color: #191a30;
+}
+
+.t-auto_tuning-days__item.active:after, .t-auto_tuning-time__item.active:after {
+  content: '';
+  height: 2px;
+  width: 50%;
+  background-color: #E03432;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%);
+}
+
+.t-auto_tuning-count_days__item {
+  background-color: #A9A9A9;
+  border-radius: .325rem;
+  font-size: 1.125rem;
+  padding: .25rem .5rem;
+  font-weight: 700;
+  min-width: 64px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.t-auto_tuning-count_days__item.active {
+  background-color: #e03432;
+}
+
+.t-auto_card-settings {
+  border-radius: .3rem;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.btn-change {
+  padding: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  color: #0A0A14;
+}
+
+.t-auto_card-settings-change {
+  background-color: #F0F0F0;
+  border-radius: 5px;
+  padding: .375rem 1.25rem;
+  color: #626262;
+}
+
+.t-auto_card-settings-change input[type="text"] {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #626262;
+}
+
+.t-auto_card-settings__label {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.t-auto_card-settings__title, .t-auto_card-settings__time {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1439px) {
+  .t-auto_tuning-count_days__item {
+    min-width: 48px;
+  }
+
+  .t-auto_tuning-days__item, .t-auto_tuning-time__item {
+    font-size: 1rem;
+  }
+
+  .t-auto_tuning__descr {
+    font-size: .75rem;
+    margin-bottom: .5rem;
+  }
+
+  .t-auto_tuning__title, .t-auto_tuning__tournaments {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .t-auto_card-settings__label {
+    font-size: .875rem;
+  }
+
+  .t-auto_card-settings-change {
+    padding: .375rem .5rem;
+    font-size: .875rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .t-auto_tuning, .t-auto_card-settings {
+    max-width: 355px;
+    width: 100%;
+  }
+}

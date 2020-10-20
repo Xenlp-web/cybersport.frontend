@@ -1,0 +1,30 @@
+.users-wrapper {
+  border-radius: .325rem;
+  padding: 1.25rem;
+}
+
+.users-row {
+  display: flex;
+  align-items: center;
+}
+
+.users-row > .form-control {
+  margin-right: .625rem;
+  background-color: #E3E3E3;
+}
+
+.user-list > .nav-item {
+  margin-bottom: .5rem;
+}
+
+.user-list {
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .users-row > .btn {
+    padding: .5rem .1rem;
+    font-size: .875rem;
+  }
+}

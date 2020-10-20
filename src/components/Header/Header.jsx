@@ -27,10 +27,6 @@ const navLinks = NAVLINKS.map(({ title, href }) => (
     </Nav.Item>
 ));
 
-const LoginButton = () => (
-  <Button variant="danger">Войти</Button>
-);
-
 const userInfo = USERINFO.map(({ id, tickets, avatar, email }) => (
       <div className='user-info d-flex align-items-center text-white' key={id}>
         <div className='user-info__tickets'><span className='tickets'> </span>{tickets}</div>
@@ -41,28 +37,33 @@ const userInfo = USERINFO.map(({ id, tickets, avatar, email }) => (
       </div>
 ));
 
-const Header = () => (
+const Header = (props) => {
+  const setSingInShow = props.setSingInShow;
+  return (
   <header>
     <Navbar fixed="top" bg="dark" variant="dark" expand="lg">
       <Container>
-        <Row className='align-items-center w-100'>
+        <Row className='align-items-center w-100 justify-content-between m-0'>
+          <NavLink className='avatar-mobile d-inline-block d-lg-none' to="#">
+            <Image src={require('../../Icons/avatar-default.svg').default} />
+          </NavLink>
           <NavLink className='logo logo--header' to="/">
             <Image src={LogoIcon} />
           </NavLink>
-          <span className="header-divider">/</span>
+          <span className="header-divider d-none d-lg-block">/</span>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto" as="ul">
               {navLinks}
             </Nav>
           </Navbar.Collapse>
-          <div className='navbar__right ml-auto d-flex align-content-center'>
+          <div className='d-none d-lg-flex navbar__right ml-auto align-content-center'>
             <Button className={AUTH ? 'mr-5 px-4' : 'mr-4 px-4'} variant="light">
                 <span className="rec bg-danger rounded-circle d-inline-block mr-2"> </span>
                 Прямой эфир
             </Button>
             {AUTH
-              ? <LoginButton/>
+              ? <Button variant="danger" onClick={() => setSingInShow(true)}>Войти</Button>
               : userInfo
             }
           </div>
@@ -70,6 +71,7 @@ const Header = () => (
       </Container>
     </Navbar>
   </header>
-);
+)
+};
 
 export default Header;

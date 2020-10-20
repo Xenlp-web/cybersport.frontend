@@ -1,0 +1,11 @@
+.navbar-light .navbar-nav .profile-nav__link {
+  padding: 0 .625rem;
+  color: #BCBCBC;
+}
+
+.navbar-light .navbar-nav .profile-nav__link:hover,
+.navbar-light .navbar-nav .profile-nav__link:focus,
+.navbar-light .navbar-nav .profile-nav__link.active {
+  color: inherit;
+}
+

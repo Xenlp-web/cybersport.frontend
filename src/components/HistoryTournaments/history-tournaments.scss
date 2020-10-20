@@ -1,0 +1,44 @@
+.h-tournaments-wrapper {
+  padding: 1.25rem 1.875rem 1.875rem;
+  background: #191a30;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.card-body {
+  padding-bottom: 1.875rem;
+}
+
+.h-card {
+  color: #191a30;
+}
+
+.h-card:not(:last-of-type) {
+  margin-bottom: 1.25rem;
+}
+
+.h-card__players, .h-card__type {
+  font-size: 14px;
+}
+
+.h-tournaments-info--text {
+  font-size: 1.5rem;
+  color: #BCBCBC;
+}
+
+.h-tournaments-info--link {
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-decoration: underline;
+}
+
+.h-card__mode {
+  margin-right: 1.5rem;
+}
+
+.h-card__link {
+  text-decoration: underline;
+}

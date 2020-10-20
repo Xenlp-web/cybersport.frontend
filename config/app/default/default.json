@@ -1,0 +1,10 @@
+{
+  "common": {
+    "environment": "development",
+    "defaultLang": "en",
+    "api": {
+      "prefix": "/api",
+      "serverUrl": "https://web70.xenforce.ru"
+    }
+  }
+}

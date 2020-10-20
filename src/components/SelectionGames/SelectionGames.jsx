@@ -31,36 +31,39 @@ import './selection_games.scss';
         }
     ];
 
-    const cards = gamesCardsInfo.map(({images, title, active}, index) =>  {
-        if(active) {
-            return (
-                <a href='#' className='s-game-card' key={index}>
-                    <Card className="game-card-body">
-                        <Card.Img variant="top" src={require("../../images/games_card/" + images).default}/>
-                        <Card.Title className='mb-0' as="h4">{title}</Card.Title>
-                    </Card>
-                </a>
-            )
-        } else {
-            return (
-                <div className='s-game-card s-game-card--disabled' key={index}>
-                    <div className='s-game-card--disabled-text w-100 h-100 position-absolute d-flex align-items-center text-center'>
-                        <span className='w-100'>Скоро</span>
-                    </div>
-                    <Card className="game-card-body">
-                        <Card.Img variant="top" src={require("../../images/games_card/" + images).default}/>
-                        <Card.Title className='mb-0' as="h4">{title}</Card.Title>
-                    </Card>
-                </div>
-            )
-        }
-    });
+    const cards = gamesCardsInfo.map(({images, title, active}, index) =>  (
+      <div className='s-game-card s-game-card--disabled' key={index}>
+        <Card className="game-card-body">
+          <Card.Img variant="top" src={require("./../../images/games_card/" + images).default}/>
+          <div className={active ? 'd-none' : 's-game-card--disabled-text w-100 h-100 position-absolute d-flex align-items-center text-center'}>
+            <span className='w-100'>Скоро</span>
+          </div>
+        </Card>
+        <Card.Title className={active ? 'mb-0' : 'mb-0 text-disabled'} as="h4">{title}</Card.Title>
+      </div>
+    ));
 
 const SelectionGames = () => {
         const settings = {
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            lazyLoad: true
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          lazyLoad: true,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 4,
+              }
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 2,
+                arrows: false
+              }
+            }
+          ]
         };
 
         return(

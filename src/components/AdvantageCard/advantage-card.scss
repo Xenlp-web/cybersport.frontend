@@ -18,3 +18,29 @@
     font-size: 1.125rem;
   }
 }
+
+@media screen and (max-width: 1439px) {
+  h4 {
+    font-size: 1.125rem;
+  }
+
+  .advantage_card-text {font-size: .875rem;}
+
+  .advantage_card-head {
+    width: 104px;
+    height: 104px;
+    margin-bottom: .625rem;
+  }
+
+  .advantage_card {
+    padding: .625rem 1.25rem;
+  }
+
+  .advantage_card-title {
+    margin-bottom: .5rem;
+  }
+
+  .card-deck .advantage_card {
+    margin: 0;
+  }
+}

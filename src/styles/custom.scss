@@ -36,6 +36,7 @@ $theme-colors: (
 
 // sapcers
 $spacers: (
+        4: ($spacer * 1.875),
         5: ($spacer * 2.5),
         6: ($spacer * 3.5),
         7: ($spacer * 4),
@@ -47,19 +48,28 @@ $spacers: (
 //$line-height-sm: 1.2;
 $font-family-base: 'Rubik';
 $line-height-base: 1.2;
+$font-weight-bolder: 500;
 
 //$h1-font-size:                $font-size-base * 2.5 !default;
 $h2-font-size: $font-size-base * 2.25;
 //$h3-font-size:                $font-size-base * 1.75 !default;
 //$h4-font-size:                $font-size-base * 1.5 !default;
 //$h5-font-size:                $font-size-base * 1.25 !default;
-//$h6-font-size:                $font-size-base !default;
+$h6-font-size: 1.25rem;
 
 // Links
 $link-color: $white;
 $link-hover-color: darken($link-color, 15%);
 
 // grid
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 1024px,
+        xl: 1440px
+);
+
 $container-max-widths: (sm: 420px, md: 720px, lg: 960px, xl: 1260px);
 $grid-gutter-width: 20px;
 
@@ -98,4 +108,11 @@ $btn-line-height-lg: 1.2;
 
 .text-light-gray {
   color: #f8f8f8;
+}
+
+
+@media screen and (max-width: 575px){
+  .main {
+    padding-bottom: 1.25rem;
+  }
 }
