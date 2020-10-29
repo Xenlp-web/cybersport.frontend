@@ -2,13 +2,13 @@
   height: 850px;
   align-items: center;
   display: flex;
-  background: none;
+  background: transparent;
   &__wrapper {
     margin-top: .625rem;
     margin-bottom: 1.25rem;
     padding-top: 	1.25rem;
     padding-bottom: 3.25rem;
-    background: url("../../images/backgrounds/bg-jumbotron.png") no-repeat center;
+    background: url("@app/images/backgrounds/bg-jumbotron.png") no-repeat center;
     background-size: cover;
   }
   &__text-content {

@@ -1,7 +1,12 @@
 import React from 'react';
 import { Navbar, Nav, Image, Container, Row, Button } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import LogoIcon from './../../Icons/logo.svg';
+import { NavLink, Link } from 'react-router-dom';
+import {useSelector} from "react-redux";
+
+import {checkAuth} from "@app/selectors/checkAuth";
+import store from "@app/store/store";
+import {userDataSelector} from '@app/selectors/userDataSelector';
+import LogoIcon from '@app/Icons/logo.svg';
 
 import './header.scss';
 
@@ -10,16 +15,7 @@ const NAVLINKS = [
   { title: 'Рейтинг', href: '/rating' }
 ];
 
-const USERINFO = [
-    {
-      id: 1,
-      tickets: 100,
-      avatar: 'avatar-default.svg',
-      email: 'test@mai.ru'
-    }
-];
-
-let AUTH = true;
+const AUTH = checkAuth(store);
 
 const navLinks = NAVLINKS.map(({ title, href }) => (
     <Nav.Item as="li" key={title}>
@@ -27,18 +23,22 @@ const navLinks = NAVLINKS.map(({ title, href }) => (
     </Nav.Item>
 ));
 
-const userInfo = USERINFO.map(({ id, tickets, avatar, email }) => (
-      <div className='user-info d-flex align-items-center text-white' key={id}>
-        <div className='user-info__tickets'><span className='tickets'> </span>{tickets}</div>
-        <div className='user-info__avatar rounded-circle'>
-            <Image className='user-info__avatar-images' src={require('../../Icons/' + avatar).default} />
-        </div>
-        <div className='user-info__email'>{email}</div>
-      </div>
-));
+const userInfo = (userData = {email: '', tickets: ''}) => {
+  return (
+    <div className='user-info d-flex align-items-center text-white'>
+      <div className='user-info__tickets'><span className='tickets'> </span>{userData.tickets}</div>
+      <Link to='/info' className='user-info__avatar rounded-circle'>
+        <Image className='user-info__avatar-images' src={require('@app/Icons/avatar-default.svg').default} />
+      </Link>
+      <div className='user-info__email'>{userData.email}</div>
+    </div>
+  )
+};
 
 const Header = (props) => {
   const setSingInShow = props.setSingInShow;
+  const userData = useSelector(userDataSelector);
+
   return (
   <header>
     <Navbar fixed="top" bg="dark" variant="dark" expand="lg">
@@ -63,8 +63,8 @@ const Header = (props) => {
                 Прямой эфир
             </Button>
             {AUTH
-              ? <Button variant="danger" onClick={() => setSingInShow(true)}>Войти</Button>
-              : userInfo
+              ? userInfo(userData)
+              : <Button variant="danger" onClick={() => setSingInShow(true)}>Войти</Button>
             }
           </div>
         </Row>

@@ -1,9 +1,9 @@
 import { combineEpics } from 'redux-observable';
 
-import languageEpics from './languageEpics';
+import signIn from './signInEpics';
 
 const epics = [
-  languageEpics
+  signIn
 ];
 
 export default combineEpics(...epics);

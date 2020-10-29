@@ -1,18 +1,48 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {Row, Container, Col, InputGroup, FormControl, Button, Form} from 'react-bootstrap';
 import ProfileNavbar from "../ProfileNavbar/ProfileNavbar.jsx";
 import HistoryTournamentsCards from "../HistoryTournaments/HistoryTournaments.jsx";
 import './profile-settings.scss';
+import {useDispatch, useSelector} from "react-redux";
+import {userDataSelector} from "@app/selectors/userDataSelector";
+import {doChangeUserInfoRequestAction} from "@app/api/requests/changeUserInfo";
 
 const ProfileSettings = () => {
-  const PLAYER = {
-    email: 'test@mail.ru',
-    nickInGame: 'SuperStrelok',
-    idInGame: '234234',
-    password: ''
-  };
+  const userData = useSelector(userDataSelector);
+  const {
+    email,
+    nickname,
+  } = userData;
 
-  const {email, nickInGame, idInGame} = PLAYER;
+  const [userEmail, setUserEmail] = useState(email);
+  const [userNickname, setUserNickname] = useState(nickname);
+  const [userPassword, setUserPassword] = useState('');
+
+  const dispatch = useDispatch();
+
+  const changeUserEmail = useCallback( () => {
+    dispatch(doChangeUserInfoRequestAction({
+      user_info: {
+        email: userEmail
+      }
+    }));
+  }, [userEmail]);
+
+  const changeUserNickname = useCallback( () => {
+    dispatch(doChangeUserInfoRequestAction({
+      user_info: {
+        nickname: userNickname
+      }
+    }));
+  }, [userNickname]);
+
+  const changeUserPassword = useCallback( () => {
+    dispatch(doChangeUserInfoRequestAction({
+      user_info: {
+        password: userPassword
+      }
+    }));
+  }, [userPassword]);
 
   return (
     <Container>
@@ -29,37 +59,25 @@ const ProfileSettings = () => {
                   aria-label={email}
                   aria-describedby="email"
                   type="email"
+                  onChange={(event) => setUserEmail(event.target.value)}
                 />
                 <InputGroup.Append>
-                  <Button variant="light">Изменить</Button>
+                  <Button variant="light" onClick={changeUserEmail}>Изменить</Button>
                 </InputGroup.Append>
               </InputGroup>
             </Form.Group>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Ник в PUBG mobile</Form.Label>
+            <Form.Group controlId="">
+              <Form.Label>Ник</Form.Label>
               <InputGroup>
                 <FormControl
-                  placeholder={nickInGame}
-                  aria-label={nickInGame}
-                  aria-describedby="Ник в PUBG mobile"
-                  type="number"
+                  placeholder={nickname}
+                  aria-label={nickname}
+                  aria-describedby="Ник"
+                  type="text"
+                  onChange={(event) => setUserNickname(event.target.value)}
                 />
                 <InputGroup.Append>
-                  <Button variant="light">Изменить</Button>
-                </InputGroup.Append>
-              </InputGroup>
-            </Form.Group>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>ID в PUBG mobile</Form.Label>
-              <InputGroup>
-                <FormControl
-                  placeholder={idInGame}
-                  aria-label={idInGame}
-                  aria-describedby="ID в PUBG mobile"
-                  type="number"
-                />
-                <InputGroup.Append>
-                  <Button variant="light">Изменить</Button>
+                  <Button variant="light" onClick={changeUserNickname}>Изменить</Button>
                 </InputGroup.Append>
               </InputGroup>
             </Form.Group>
@@ -71,9 +89,10 @@ const ProfileSettings = () => {
                   aria-label='password'
                   aria-describedby="email"
                   type="password"
+                  onChange={(event) => setUserPassword(event.target.value)}
                 />
                 <InputGroup.Append>
-                  <Button variant="light">Изменить</Button>
+                  <Button variant="light" onClick={changeUserPassword}>Изменить</Button>
                 </InputGroup.Append>
               </InputGroup>
             </Form.Group>

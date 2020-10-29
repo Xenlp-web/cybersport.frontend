@@ -2,6 +2,8 @@ import React from 'react';
 import ProfileNavbar from '../ProfileNavbar/ProfileNavbar.jsx';
 import './profile-store.scss';
 import {Col, Container, Row, Card, Button} from "react-bootstrap";
+import {useSelector} from "react-redux";
+import {userDataSelector} from "@app/selectors/userDataSelector";
 
 const ADVANTAGECARD = [
   {
@@ -55,19 +57,12 @@ const StoreCards = () => {
 };
 
 const ProfileStore = () => {
-  const PLAYER = {
-    nick: 'SuperStrelok',
-    rp: '250',
-    rank: 'Prime',
-    ticket: 100,
-    money: 4100,
-    bonus: 4100,
-    refLink: 'https://pubgmatch.ru/r/jgfsyw',
-    refBonus: 4100,
-    refMoney: 2000,
-  };
-
-  const {ticket, money, bonus} = PLAYER;
+  const userData = useSelector(userDataSelector);
+  const {
+    coins,
+    coins_bonus,
+    tickets,
+  } = userData;
 
   return (
     <Container>
@@ -77,15 +72,15 @@ const ProfileStore = () => {
           <Row>
             <div className="profile_store-info__wrap">
               <span className="profile_store-info__title">Билеты</span>
-              <span className="profile_store-info__descr--small"><span className="tickets"></span>{ticket}</span>
+              <span className="profile_store-info__descr--small"><span className="tickets"></span>{tickets}</span>
             </div>
             <div className="profile_store-info__wrap">
               <span className="profile_store-info__title">Баланс</span>
-              <span className="profile_store-info__descr--small">{money} ₽</span>
+              <span className="profile_store-info__descr--small">{coins} ₽</span>
             </div>
             <div className="profile_store-info__wrap">
               <span className="profile_store-info__title">Бонусов</span>
-              <span className="profile_store-info__descr--small">{bonus} ₽</span>
+              <span className="profile_store-info__descr--small">{coins_bonus} ₽</span>
             </div>
           </Row>
         </Col>

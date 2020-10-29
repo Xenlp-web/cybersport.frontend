@@ -4,11 +4,19 @@ import path from 'ramda/src/path';
 
 import config from '@config/app/default';
 
-const { serverUrl } = config.common.api;
+const {serverUrl } = config.common.api;
+
+const token = localStorage.getItem('Authorization') ? localStorage.getItem('Authorization') : [];
 
 const instance = axios.create({
   baseURL: serverUrl,
-  withCredentials: true
+  withCredentials: true,
+  headers: {
+    'X-Requested-With': 'XMLHttpRequest',
+    'Access-Control-Allow-Origin': '*',
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
+  },
 });
 
 const handleError = (error) => {

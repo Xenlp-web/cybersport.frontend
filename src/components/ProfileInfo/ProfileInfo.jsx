@@ -3,21 +3,23 @@ import {Row, Container, Col, Button} from 'react-bootstrap';
 import ProfileNavbar from "../ProfileNavbar/ProfileNavbar.jsx";
 import HistoryTournamentsCards from '../HistoryTournaments/HistoryTournaments.jsx';
 import './profile-info.scss';
+import {useSelector} from "react-redux";
+import {userDataSelector} from "@app/selectors/userDataSelector";
 
 const ProfileInfo = () => {
-  const PLAYER = {
-    nick: 'SuperStrelok',
-    rp: '250',
-    rank: 'Prime',
-    ticket: 100,
-    money: 4100,
-    bonus: 4100,
-    refLink: 'https://pubgmatch.ru/r/jgfsyw',
-    refBonus: 4100,
-    refMoney: 2000,
-  };
+  const userData = useSelector(userDataSelector);
 
-  const {nick, rp, rank, ticket, money, bonus, refLink, refBonus, refMoney} = PLAYER;
+  const {
+    coins,
+    coins_bonus,
+    coins_from_referals,
+    nickname,
+    referal_code,
+    tickets,
+  } = userData;
+
+  const rp = 0;
+  const rank = 0;
 
   return (
     <Container>
@@ -27,7 +29,7 @@ const ProfileInfo = () => {
             <div className="profile-info">
               <Row className="align-items-center mb-4 d-none d-md-flex">
                 <Col xs={6}>
-                  <span className="profile-info__nick">{nick}</span>
+                  <span className="profile-info__nick">{nickname}</span>
                 </Col>
                 <Col xs={6}>
                   <Button className="profile-info__notifications"><span className="notifications__icon"> </span>Настроить оповещания</Button>
@@ -46,15 +48,15 @@ const ProfileInfo = () => {
               <Row className="order-sm-1">
                 <div className="profile-info__wrap">
                   <span className="profile-info__title">Билеты</span>
-                  <span className="profile-info__descr--small"><span className="tickets"></span>{ticket}</span>
+                  <span className="profile-info__descr--small"><span className="tickets"></span>{tickets}</span>
                 </div>
                 <div className="profile-info__wrap">
                   <span className="profile-info__title">Баланс</span>
-                  <span className="profile-info__descr--small">{money} ₽</span>
+                  <span className="profile-info__descr--small">{coins} ₽</span>
                 </div>
                 <div className="profile-info__wrap">
                   <span className="profile-info__title">Бонусов</span>
-                  <span className="profile-info__descr--small">{bonus} ₽</span>
+                  <span className="profile-info__descr--small">{coins_bonus} ₽</span>
                 </div>
               </Row>
               <div className="profile-info-ref d-flex flex-column order-sm-3">
@@ -63,14 +65,14 @@ const ProfileInfo = () => {
                   <div className="profile-info-ref__col col-sm-12 col-md-6">
                     <div className="profile-info-ref__title">Ваша реферальная ссылка:</div>
                     <div className="profile-info-ref__link">
-                      <span className="profile-info-ref__link-text">{refLink}</span>
+                      <span className="profile-info-ref__link-text">{referal_code}</span>
                       <span className="profile-info-ref__link-icon"> </span>
                     </div>
                   </div>
                   <div className="profile-info-ref__col  col-sm-12 col-md-6 p-2 px-md-4">
                     <div className="profile-info-ref__title">
                       <span>Количество рефералов: </span>
-                      <span>{refBonus}</span>
+                      <span>{coins_from_referals}</span>
                     </div>
                     <div className="profile-info-ref__descr profile-info-ref__descr--desktop d-none d-md-flex">
                       Пригласи друга по своей реферальной ссылке и получи 1 билет
@@ -85,7 +87,7 @@ const ProfileInfo = () => {
                   <div className="profile-info-ref__title">
                     Заработано с рефералов
                   </div>
-                  <div className="profile-info-ref__money">{refMoney} ₽</div>
+                  <div className="profile-info-ref__money">{coins_from_referals} ₽</div>
                 </div>
               </div>
             </div>
