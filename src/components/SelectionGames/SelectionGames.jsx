@@ -72,7 +72,6 @@ const SelectionGames = () => {
   };
 
   const gameList = useSelector(gameListSelector);
-  console.log(gameList);
 
   const dispatch = useDispatch();
   const getMsg = useCallback(() => {

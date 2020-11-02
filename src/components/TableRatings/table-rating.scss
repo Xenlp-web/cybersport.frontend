@@ -12,7 +12,7 @@
 }
 
 // test
-button#dropdown-basic-button {
+.rating-sort-head {
   font-weight: 400;
   padding: .5rem 1.25rem .575rem;
   line-height: 1.2;
@@ -24,10 +24,16 @@ button#dropdown-basic-button {
   background-color: #191a30 !important;
 }
 
-a.rating-sort-item.dropdown-item {
+.rating-sort-item.dropdown-item {
   color: #A9A9A9;
   font-size: 1.125rem;
   padding: .375rem 1.25rem;
+}
+
+.rating-sort-head > .btn {
+  padding: .5rem 1.25rem .575rem;
+  line-height: 1.2;
+  text-align: left;
 }
 
 .dropdown-menu.show {
@@ -37,7 +43,7 @@ a.rating-sort-item.dropdown-item {
 }
 
 
-button#dropdown-basic-button {
+.rating-sort-head {
   text-align: left;
 }
 

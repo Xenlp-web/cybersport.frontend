@@ -13,7 +13,3 @@ export const addTokenReducer = createReducer(null, {
     return {token: action.token}
   }
 });
-
-// const app = (state = initialState) => {
-//   return state
-// };

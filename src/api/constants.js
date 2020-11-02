@@ -11,5 +11,8 @@ export const ENDPOINTS = {
   GET_MESSAGE_TO_GLOBAL_CHAT: `${prefix}/getGlobalChatMessages`,
   CHANGE_USER_INFO: `${prefix}/changeUserInfo`,
   GET_ALL_REGIONS: `${prefix}/getAllRegions`,
-  GET_GAMES_LIST: `${prefix}/getAllGames`
+  GET_GAMES_LIST: `${prefix}/getAllGames`,
+  GET_STATISTIC_FOR_PLAYERS: `${prefix}/getStatisticForPlayers`,
+  GET_TOURNAMENTS_FOR_GAMES: `${prefix}/getTournamentsByGame`,
+  CREATE_TOURNAMENT: `${prefix}/createTournamentByAdmin`
 };

@@ -3,6 +3,7 @@ import {Row, Container, Col, Button} from 'react-bootstrap';
 import ProfileNavbar from "../ProfileNavbar/ProfileNavbar.jsx";
 import HistoryTournamentsCards from '../HistoryTournaments/HistoryTournaments.jsx';
 import './profile-info.scss';
+import {Link} from 'react-router-dom';
 import {useSelector} from "react-redux";
 import {userDataSelector} from "@app/selectors/userDataSelector";
 
@@ -16,6 +17,7 @@ const ProfileInfo = () => {
     nickname,
     referal_code,
     tickets,
+    is_admin
   } = userData;
 
   const rp = 0;
@@ -99,6 +101,10 @@ const ProfileInfo = () => {
             </div>
           </Col>
         </Row>
+      {is_admin
+        ? <div className='text-center mt-4'><Link to="/auto-tournaments">войти в панель администратора</Link></div>
+        : false
+      }
       </Container>
   )
 };

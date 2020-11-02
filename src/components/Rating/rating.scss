@@ -1,1 +1,11 @@
-//dfg
+.container-games_card + * .rounded-circle {
+  object-fit: contain;
+  height: 64px;
+  width: 64px;
+  position: absolute;
+}
+.list-group-item > span:nth-of-type(1) {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}

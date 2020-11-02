@@ -8,6 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {allMessageGlobalChatSelector} from "@app/selectors/chatMessageSelector";
 import {checkAuth} from "@app/selectors/checkAuth";
 import store from "@app/store/store";
+import useInit from "@app/utils/init";
 
 const Chat = () => {
   const [messageText, setMessageText] = useState('');
@@ -16,14 +17,11 @@ const Chat = () => {
   const AUTH = checkAuth(store);
   const messagesAllResponse = useSelector(allMessageGlobalChatSelector);
 
-  const sendMsg = useCallback( () => {
+  const sendMessage = useCallback( () => {
     dispatch(doSendMessageToGlobalChatRequestAction({message: messageText}));
   }, [messageText]);
 
-  const getMsg = useCallback(() => {
-    dispatch(loadMessageToGlobalChatDataAction());
-  }, []);
-  getMsg();
+  useInit(loadMessageToGlobalChatDataAction, [sendMessage]);
 
   const messagesArrays = Object.entries(messagesAllResponse);
   let messageData = [];
@@ -64,7 +62,7 @@ const Chat = () => {
                   <Form.Group controlId="" className="mb-3 text-dark">
                     <Form.Control as="textarea" rows="3" onChange={(event) => setMessageText(event.target.value)}/>
                   </Form.Group>
-                  <Button variant="danger" onClick={sendMsg}>Отправить</Button>
+                  <Button variant="danger" onClick={sendMessage}>Отправить</Button>
                 </div>
                 :
                 <div className="massage-footer">

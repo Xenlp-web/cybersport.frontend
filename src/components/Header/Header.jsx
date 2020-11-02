@@ -12,7 +12,8 @@ import './header.scss';
 
 const NAVLINKS = [
   { title: 'Турниры', href: '/tournament' },
-  { title: 'Рейтинг', href: '/rating' }
+  { title: 'Рейтинг', href: '/rating' },
+  { title: 'Правила', href: '/Rules'}
 ];
 
 const AUTH = checkAuth(store);
@@ -44,12 +45,20 @@ const Header = (props) => {
     <Navbar fixed="top" bg="dark" variant="dark" expand="lg">
       <Container>
         <Row className='align-items-center w-100 justify-content-between m-0'>
-          <NavLink className='avatar-mobile d-inline-block d-lg-none' to="#">
+          <NavLink className='avatar-mobile d-inline-block d-lg-none' to="/info">
             <Image src={require('../../Icons/avatar-default.svg').default} />
           </NavLink>
           <NavLink className='logo logo--header' to="/">
             <Image src={LogoIcon} />
           </NavLink>
+          <div className="ml-4">
+            <span className="lang_icon mr-3">
+              <img  src={require('../../Icons/eu.png').default} alt=""/>
+            </span>
+            <span className="lang_icon" >
+              <img src={require('../../Icons/us.png').default} alt=""/>
+            </span>
+          </div>
           <span className="header-divider d-none d-lg-block">/</span>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

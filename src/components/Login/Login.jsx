@@ -63,8 +63,8 @@ const Login = (props) => {
 
   return(
     <>
-      <Link to="/info">profile</Link>{' '}
-      <Link to="/auto-tournaments">admin</Link>
+      {/*<Link to="/info">profile</Link>{' '}*/}
+      {/*<Link to="/auto-tournaments">admin</Link>*/}
 
       <Modal
         size="sm"
