@@ -356,6 +356,32 @@ button.btn.btn-secondary {
   }
 }
 
+
+// test
+.t-card-lobby {
+  z-index: 3;
+  top: 35px;
+  left: 25px;
+}
+
+.t-card-lobby__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.t-card-lobby__info {
+  font-size: 1.125rem;
+}
+
+.t-card-lobby__info > b {
+  font-weight: 700;
+}
+
+.t-card--tomorrow:first-of-type .t-card-lobby {
+  left: 3.625rem;
+}
+
 @media screen and (max-width: 575px){
   .t-card {
     max-width: 355px;

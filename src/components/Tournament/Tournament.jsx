@@ -22,8 +22,8 @@ const Tournament = () => {
       game_id: gameIdSelected
     }), []
   );
+
   const tournametsForGameResponse = useSelector(getTournamentsForGameSelector);
-  console.log(tournametsForGameResponse);
 
   if (!!tournametsForGameResponse) {
     tournamentCardInfoToday = tournametsForGameResponse.tournamentsToday;
@@ -38,7 +38,7 @@ const Tournament = () => {
   const checkTournamentsToday = () => {
     let cardsToday;
 
-    if(tournamentCardInfoToday !== []) {
+    if(tournamentCardInfoToday.length > 0) {
       cardsToday = <Row className='justify-content-center justify-content-md-start'>
                     <TournamentsCards type="today" tournamentCardInfo={tournamentCardInfoToday}/>
                   </Row>
@@ -52,7 +52,7 @@ const Tournament = () => {
   const checkTournamentsTomorrow = () => {
     let cardsTomorrow;
 
-    if(tournamentCardInfoTomorrow !== []) {
+    if(tournamentCardInfoTomorrow.length > 0) {
       cardsTomorrow = <Row className='justify-content-center justify-content-md-start'>
         <TournamentsCards type="tomorrow" tournamentCardInfo={tournamentCardInfoTomorrow}/>
       </Row>
@@ -65,7 +65,7 @@ const Tournament = () => {
 
   const checkTournamentsPast = () => {
     let cardsPast;
-    if(tournamentCardInfoPast!== []) {
+    if(tournamentCardInfoPast.length > 0) {
       cardsPast = <Row className='justify-content-center justify-content-md-start'>
         <TournamentsCards type="past" tournamentCardInfo={tournamentCardInfoPast} />
       </Row>

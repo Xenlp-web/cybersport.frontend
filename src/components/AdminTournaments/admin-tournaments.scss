@@ -11,6 +11,28 @@
   background-color: #E3E3E3;
 }
 
+.tournament-list__item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: .5rem 0;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.tournament-list__item > span {
+  width: 50%;
+  word-break: break-all;
+}
+
+.tournament-list__item > span:first-of-type {
+  padding-right: 1rem;
+}
+
+.tournament-list__item:not(:last-of-type) {
+  border-bottom: 1px solid #e3e3e3;
+}
+
 @media screen and (max-width: 767px) {
   .tournaments-list__search > *:not(:last-child) {
     margin-right: 0;

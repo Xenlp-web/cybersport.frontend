@@ -8,6 +8,7 @@ const signIn = (action$, state$) =>
     ofType(signInFulfilledAction),
     tap(() => {
       localStorage.setItem('Authorization', signInResponseSelector(state$.value).token);
+      window.location.reload();
     }),
     ignoreElements()
   );

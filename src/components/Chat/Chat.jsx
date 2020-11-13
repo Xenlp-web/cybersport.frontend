@@ -51,7 +51,7 @@ const Chat = () => {
     <div className="chat-wrapper position-relative">
       <Container>
         <Row>
-          <Col sm={6}>
+          <Col sm={12} lg={6}>
             <div className="chat-container bg-white">
               <h2 className="text-dark">Чат</h2>
               <div className="message-wrapper">
@@ -71,8 +71,8 @@ const Chat = () => {
               }
             </div>
           </Col>
-          <Col sm={6} className="position-relative">
-            <div className="row">
+          <Col sm={12} lg={6} className="position-relative">
+            <div className="row d-lg-flex d-none">
               <img className="chat-images" src={require("../../images/backgrounds/bg-chat.png").default} alt=""/>
             </div>
             <div className="chat-btn-group">

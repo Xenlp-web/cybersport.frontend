@@ -10,6 +10,11 @@ import {userDataSelector} from "@app/selectors/userDataSelector";
 const ProfileInfo = () => {
   const userData = useSelector(userDataSelector);
 
+  const logout = () => {
+    localStorage.removeItem('Authorization');
+    location.assign("/").reload();
+  }
+
   const {
     coins,
     coins_bonus,
@@ -102,8 +107,12 @@ const ProfileInfo = () => {
           </Col>
         </Row>
       {is_admin
-        ? <div className='text-center mt-4'><Link to="/auto-tournaments">войти в панель администратора</Link></div>
-        : false
+        ? <div className='text-center mt-4'>
+          <Link to="/auto-tournaments" className="mb-3">войти в панель администратора</Link>
+          <br/>
+          <Link to="#" onClick={logout}>Выйти</Link>
+      </div>
+        : <div className='text-center mt-4'><Link to="#" onClick={logout}>Выйти</Link></div>
       }
       </Container>
   )

@@ -28,6 +28,26 @@
   transition: .3s;
 }
 
+.mobile-menu__link {
+  background-color: #131326;
+  border-radius: .25rem;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  justify-content: center;
+  &.active {
+    background-color: #E03432;
+  }
+}
+
+.mobile-menubar {
+  padding-top: .75rem;
+  padding-bottom: 1rem;
+}
+//
+
 @media screen and (max-width: 1439px) {
   .footer__content {
     order: 3;
