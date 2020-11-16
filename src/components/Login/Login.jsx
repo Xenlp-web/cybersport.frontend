@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from "react-router-dom";
 import {Modal, Button, Form} from 'react-bootstrap';
@@ -7,6 +7,7 @@ import {doSignInRequestAction} from '@app/api/requests/sign-in';
 import {loadAllRegionsDataAction} from '@app/api/requests/regions';
 import {doRegistrationRequestAction} from '@app/api/requests/registration';
 import {allRegionsSelector} from '@app/selectors/allRegionsSelector';
+import {signInSelector} from "@app/selectors/singInSelector";
 
 import './login.scss';
 
@@ -30,6 +31,9 @@ const Login = (props) => {
       password: userPassword
     }));
   }, [userEmail, userPassword]);
+
+  const test = useSelector(signInSelector);
+  // console.log(test);
 
   const getRegionsAll = useCallback(() => {
     dispatch(loadAllRegionsDataAction());

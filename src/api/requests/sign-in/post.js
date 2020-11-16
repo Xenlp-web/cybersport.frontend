@@ -7,8 +7,10 @@ const postSignInRequest = (data) => api.post(ENDPOINTS.SIGN_IN, data);
 
 export const {
   responseSelector: signInResponseSelector,
+  errorSelector: signInErrorSelector,
   doRequestAction: doSignInRequestAction,
-  requestFulfilledAction: signInFulfilledAction
+  requestFulfilledAction: signInFulfilledAction,
+  requestRejectedAction: setSignInErrorAction
 } = requestsFactory({ request: postSignInRequest, stateRequestKey: 'sign-in'
   // fulfilledActions: [({ response }) => {
   //   // return the actions that should be dispatched when request is fulfilled

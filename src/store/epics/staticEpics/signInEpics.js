@@ -1,7 +1,10 @@
 import {ofType} from 'redux-observable';
 import {ignoreElements, tap} from 'rxjs/operators';
 
-import {signInResponseSelector, signInFulfilledAction} from '@app/api/requests/sign-in';
+import {
+  signInResponseSelector,
+  signInFulfilledAction
+} from '@app/api/requests/sign-in';
 
 const signIn = (action$, state$) =>
   action$.pipe(
