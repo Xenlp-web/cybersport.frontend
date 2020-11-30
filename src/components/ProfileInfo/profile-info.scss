@@ -3,6 +3,10 @@
   font-weight: 500;
 }
 
+.profile-info__email {
+  font-size: 1.25rem;
+}
+
 .profile-info__notifications {
   color: #fff;
   font-size: 14px;
@@ -106,6 +110,31 @@
 
 .profile-info-ref__link {
   position: relative;
+}
+
+.navbar-expand .navbar-nav {
+  flex-direction: row !important;
+}
+
+.settings__icon {
+  background: url(./../../Icons/settings.svg) no-repeat center/auto;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 1919px) {
+  .profile-info-ref__descr.profile-info-ref__descr--desktop {
+    font-size: 10px;
+  }
+
+  .profile-info-ref__title {
+    font-size: .875rem;
+  }
+
+  .nav-link.profile-nav__link {
+    font-size: .875rem;
+  }
 }
 
 @media screen and (max-width: 767px) {

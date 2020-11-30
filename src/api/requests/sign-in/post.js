@@ -10,7 +10,7 @@ export const {
   errorSelector: signInErrorSelector,
   doRequestAction: doSignInRequestAction,
   requestFulfilledAction: signInFulfilledAction,
-  requestRejectedAction: setSignInErrorAction
+  requestRejectedAction: signInRejectedAction
 } = requestsFactory({ request: postSignInRequest, stateRequestKey: 'sign-in'
   // fulfilledActions: [({ response }) => {
   //   // return the actions that should be dispatched when request is fulfilled

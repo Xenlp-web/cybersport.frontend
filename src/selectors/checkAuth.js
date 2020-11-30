@@ -9,5 +9,3 @@
 // };
 
 export const checkAuth = () => !!localStorage.getItem('Authorization');
-
-// export

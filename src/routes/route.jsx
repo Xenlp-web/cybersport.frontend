@@ -13,6 +13,7 @@ import AdminTournamentsParticipants from "../components/AdminTournamentsParticip
 import AdminAddResultsTournaments from "../components/AdminAddResultsTournaments/AdminAddResultsTournaments.jsx";
 import AdminUsers from "../components/AdminUsers/AdminUsers.jsx";
 import Rules from "../components/Rules/Rules.jsx";
+import PageTournament from "../components/PageTournament/PageTournament.jsx";
 
 const MainContent = (props) => {
   const setSingInShow = props.setSingInShow;
@@ -34,6 +35,8 @@ const MainContent = (props) => {
       <Route exact path='/tournaments-participant' component={AdminTournamentsParticipants}/>
       <Route exact path='/add-results-tournaments' component={AdminAddResultsTournaments}/>
       <Route exact path='/users' component={AdminUsers}/>
+
+      <Route exact path='/tournament/:id' component={PageTournament}/>
     </Switch>
   )
 };

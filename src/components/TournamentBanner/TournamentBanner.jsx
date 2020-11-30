@@ -69,7 +69,7 @@ const TournamentBanner = () => {
         };
 
         return(
-            <Container className='mb-3 mb-md-6'>
+            <Container className='mb-3 mb-md-6 container--indent'>
                 <Row>
                     <Slider className='w-100 tournament-banner' {...settings}>
                         {slides}

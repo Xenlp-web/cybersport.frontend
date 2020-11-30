@@ -19,7 +19,12 @@ export const ENDPOINTS = {
   CANCEL_REGISTRATION_TOURNAMENT: `${prefix}/cancel-tournament-participation`,
   GET_TOURNAMENTS_FOR_ADMIN: `${prefix}/get-tournaments-for-admin`,
   GET_TOURNAMENTS_OPTIONS_FOR_ADMIN: `${prefix}/get-tournaments-option-for-admin`,
+  GET_TOURNAMENT_INFO: `${prefix}/get-tournament-info`,
   GET_TOURNAMENTS_USERS: `${prefix}/get-participants`,
   CHANGE_RESULT: `${prefix}/save-result`,
-  GET_USER_INFO: `${prefix}/get-user-info`
+  GET_USER_INFO: `${prefix}/get-user-info`,
+  CHANGE_TOURNAMENT_BY_ADMIN: `${prefix}/edit-tournament-info`,
+  DELETE_TOURNAMENT_BY_ADMIN: `${prefix}/remove-tournament`,
+  ADD_GAME_INFO: `${prefix}/add-game-info`,
+  GET_GAME_INFO: `${prefix}/get-game-info`
 };

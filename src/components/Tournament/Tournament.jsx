@@ -9,7 +9,6 @@ import useInit from "@app/utils/init";
 import {forcedLoadTournamentsForGamesDataAction} from "@app/api/requests/tournaments";
 import {useSelector} from "react-redux";
 import {getTournamentsForGameSelector} from "@app/selectors/tournamentsForGameSelector";
-// import {getTournamentsForGamesResponseSelector} from "@app/api/requests/tournaments"
 
 let tournamentCardInfoToday = [];
 let tournamentCardInfoTomorrow = [];
@@ -80,15 +79,15 @@ const Tournament = () => {
       <SelectionGames/>
       <TournamentBanner/>
       <Chat/>
-      <Container className='mb-md-5'>
+      <Container className='mb-md-5 container--indent'>
         <h2>Сегодня</h2>
         {checkTournamentsToday()}
       </Container>
-      <Container className='mb-md-5'>
+      <Container className='mb-md-5 container--indent'>
         <h2>Завтра</h2>
         {checkTournamentsTomorrow()}
       </Container>
-      <Container className='mb-md-5'>
+      <Container className='mb-md-5 container--indent'>
         <h2>Прошедшие</h2>
         {checkTournamentsPast()}
       </Container>

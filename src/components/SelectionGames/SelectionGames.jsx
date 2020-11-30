@@ -56,11 +56,11 @@ const SelectionGames = () => {
     infinite: false,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1440,
         settings: {
           slidesToShow: 4,
         }
-        },
+      },
       {
         breakpoint: 767,
         settings: {
@@ -80,7 +80,7 @@ const SelectionGames = () => {
   getMsg();
 
   return(
-    <Container className='container-games_card'>
+    <Container className='container-games_card container--indent'>
       <h2>Выберите игру</h2>
       <Row>
         <Slider className='w-100 games_card' {...settings}>

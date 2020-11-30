@@ -1,5 +1,6 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+@import "~react-notifications-component/dist/theme.css";
 
 $slick-font-path: "~slick-carousel/slick/fonts/";
 $slick-loader-path: "~slick-carousel/slick/";
@@ -66,6 +67,15 @@ $slick-next-character: '';
 
 .h2, h2 {
   margin-bottom: 1.75rem;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1919px) {
+  .container--indent {
+    padding-left: 260px;
+  }
+  #basic-navbar-nav {
+    left: 0 !important;
+  }
 }
 
 @media screen and (max-width: 767px) {

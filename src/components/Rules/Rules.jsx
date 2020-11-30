@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 const Rules = () => {
   return (
-    <Container className='text-white py-6'>
+    <Container className='text-white py-6 container--indent'>
       <p className="rules-title text-uppercase">ПРАВИЛА ТУРНИРОВ CYBER SPORT</p>
       <p className="rules-description">
         Настоящим определяются правила проведения Турниров. <br/>

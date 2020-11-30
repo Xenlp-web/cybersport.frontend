@@ -45,7 +45,7 @@ const TableRatings = () => {
   }), [gameIdSelected, positionSelected, periodSelected]);
 
   return (
-    <Container>
+    <Container className="container--indent">
       <div className="rating-head d-flex justify-content-between">
         <h2 className="d-none d-md-inline">По доходу</h2>
         <div className="rating-sort--wrapper">

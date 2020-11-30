@@ -7,4 +7,8 @@ const postCreateTournamentRequest = (data) => api.post(ENDPOINTS.CREATE_TOURNAME
 
 export const {
   doRequestAction: doCreateTournamentRequestAction,
+  responseSelector: responseCreateTournamentSelector,
+  requestFulfilledAction: requestCreateTournamentFulfilledAction,
+  errorSelector: errorCreateTournamentSelector,
+  requestRejectedAction: requestCreateTournamentRejectedAction
 } = requestsFactory({ request: postCreateTournamentRequest, stateRequestKey: 'create_tournament' });

@@ -7,7 +7,12 @@ import useInit from "@app/utils/init";
 import {forcedLoadTournamentOptionsForAdminDataAction} from "@app/api/requests/changeTournament";
 import store from "@app/store/store";
 import {useDispatch} from "react-redux";
-import {doChangeResultRequestAction} from "@app/api/requests/tournamentParticipants";
+import {
+  doChangeResultRequestAction,
+  forcedLoadTournamentParticipantsDataAction
+} from "@app/api/requests/tournamentParticipants";
+import AdminTournamentsParticipantsInfo from "../AdminTournamentsParticipantsInfo/AdminTournamentsParticipantsInfo.jsx";
+import {Modal} from "react-bootstrap/Modal";
 
 const InfoTournament = (props) => {
   if (!!props.infoTournament) {
@@ -33,9 +38,11 @@ const InfoTournament = (props) => {
 const AdminAddResultsTournaments = () => {
   const [activeTournament, setActiveTournament] = useState();
   const [infoActiveTournament, setInfoActiveTournament] = useState();
-  const [nickGame, setNickGame] = useState();
+  const [kill, setKill] = useState();
+  const [death, setDeath] = useState();
   const [points, setPoints] = useState();
   const [idInGame, setIdInGame] = useState();
+  const [mvp, setMvp] = useState('0');
   let tournamentInfo = [];
 
   const dispatch = useDispatch();
@@ -50,19 +57,33 @@ const AdminAddResultsTournaments = () => {
       tournamentInfo = tournamentInfo.tournamentInfo[0];
 
       setInfoActiveTournament(tournamentInfo);
+
+      showUsersTournament();
     }
+  };
+
+  const showUsersTournament = () => {
+    dispatch(forcedLoadTournamentParticipantsDataAction({tournament_id: activeTournament}))
   };
 
   const changeInfo = useCallback( () => {
     dispatch(doChangeResultRequestAction({
       tournament_results: [
-        nickGame,
-        points,
-        idInGame
+        {
+          user_id: idInGame,
+          placement: points,
+          mvp: mvp,
+          kills: kill,
+          deaths: death
+        }
       ],
       tournament_id: activeTournament
     }));
-  }, [nickGame, points, idInGame, activeTournament]);
+  }, [kill, death, mvp, points, idInGame, activeTournament]);
+
+  const changeMvpState = useCallback(() => {
+    (mvp === '0') ? setMvp('0') : setMvp('1');
+  }, [mvp]);
 
   return (
     <Container>
@@ -104,21 +125,41 @@ const AdminAddResultsTournaments = () => {
           </div>
           <div
             className="participants-tournament tournaments-list__result d-flex align-items-center bg-white mb-4 flex-column flex-md-row">
-            <Form.Control className="mb-1 mb-md-0" type="text" placeholder="Ник PUBG"
-                          onChange={(event) => setNickGame(event.target.value)}
+            <Form.Control className="mb-1 mb-md-0" type="number" placeholder="Ид игрока"
+                          onChange={(event) => setIdInGame(event.target.value)}
             />
             <Form.Control className="mb-1 mb-md-0" type="number" placeholder="Очки"
                           onChange={(event) => setPoints(event.target.value)}
             />
-            <Form.Control className="mb-1 mb-md-0" type="number" placeholder="PUBG ID"
-                          onChange={(event) => setIdInGame(event.target.value)}
+            <Form.Control className="mb-1 mb-md-0" type="text" placeholder="Убийства"
+                          onChange={(event) => setKill(event.target.value)}
             />
+            <Form.Control className="mb-1 mb-md-0" type="text" placeholder="Смерти"
+                          onChange={(event) => setDeath(event.target.value)}
+            />
+            <div className="custom-control custom-checkbox">
+              <input type="checkbox" id="custom-checkbox"
+                     onChange={() => changeMvpState()}
+                     className="custom-control-input"/>
+              <label htmlFor="custom-checkbox" className="custom-control-label text-dark font-weight-bold">
+                MVP
+              </label>
+            </div>
             <Button variant="warning" className="w-100 w-md-auto text-white" onClick={changeInfo}>Добавить</Button>
           </div>
         </Col>
         <Col sm={12} lg={4}>
-          <div className="participants-tournament bg-white text-dark">
-          </div>
+          <Table className="participants-tournament px-2 align-items-center bg-white overflow-hidden">
+            <thead>
+            <tr>
+              <th>Ид</th>
+              <th>Никнейм</th>
+            </tr>
+            </thead>
+            <tbody className="tournaments-info-wrapper">
+              <AdminTournamentsParticipantsInfo />
+            </tbody>
+          </Table>
         </Col>
       </Row>
     </Container>

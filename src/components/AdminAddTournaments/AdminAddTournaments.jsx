@@ -24,7 +24,7 @@ const AdminAddTournaments = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [broadcast, setBroadcast] = useState('');
-  const [imagesName, setImagesName] = useState('');
+  const [imagesName, setImagesName] = useState('default');
 
   const dispatch = useDispatch();
 
@@ -36,7 +36,9 @@ const AdminAddTournaments = () => {
         tickets: ticketsForEntance,
         img: imagesName,
         start_time: date + ' ' + time + ':00',
-        region: region_id
+        region: region_id,
+        stream: broadcast,
+        lobby_pass: passwordLobby
       },
       options: {
         map: selectedMap,
@@ -46,8 +48,7 @@ const AdminAddTournaments = () => {
         winners: numberOfWinners,
         placement_award: rewardForPlace,
         kill_award: rewardForKilling,
-        mvp_award: rewardForMVP,
-        lobby_pass: passwordLobby
+        mvp_award: rewardForMVP
       }
     }));
   }, [
@@ -65,7 +66,8 @@ const AdminAddTournaments = () => {
     rewardForPlace,
     rewardForKilling,
     rewardForMVP,
-    passwordLobby
+    passwordLobby,
+    broadcast
   ]);
 
   return (
@@ -113,20 +115,20 @@ const AdminAddTournaments = () => {
           <Form.Control type="time" onChange={(event) => setTime(event.target.value)}/>
           <Form.Control type="text" placeholder="Трансляция"
                         onChange={(event) => setBroadcast(event.target.value)}/>
-          <Form.File id="selectingAnImageForTheTournament" custom>
-            <Form.File.Input
-              accept=".png, .jpg, .jpeg"
-              onChange={(event) => {
-              setImagesName(event.target.files[0].name);
-            }}/>
-            <Form.File.Label data-browse="Выбрать">
-              Картинка
-            </Form.File.Label>
-          </Form.File>
+          {/*<Form.File id="selectingAnImageForTheTournament" custom>*/}
+            {/*<Form.File.Input*/}
+              {/*accept=".png, .jpg, .jpeg"*/}
+              {/*onChange={(event) => {*/}
+              {/*setImagesName(event.target.files[0].name);*/}
+            {/*}}/>*/}
+            {/*<Form.File.Label data-browse="Выбрать">*/}
+              {/*Картинка*/}
+            {/*</Form.File.Label>*/}
+          {/*</Form.File>*/}
         </Row>
         <div className="text-center mt-4">
           <Button className="btn-warning text-white mr-3 btn--add" onClick={tournamentAddSubmit}>Добавить</Button>
-          <Button className="btn--clear">Очистить</Button>
+          {/*<Button className="btn--clear">Очистить</Button>*/}
         </div>
       </div>
     </Container>

@@ -1,0 +1,42 @@
+.page-tournament-images {
+  width: 100%;
+  height: calc(100% - 2.5rem);
+  background-size: auto 100%;
+  background-position: center;
+  border-radius: .125rem;
+  overflow: hidden;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.page-tournament-rules__wrapper {
+  padding: 2.5rem 2.5rem 3.75rem;
+  border-radius: .125rem;
+}
+
+.page-tournament-rules__text {
+  font-size: 1.5rem;
+  margin-bottom: .75rem;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.page-tournament-info {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.page-tournament-info__title {
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.page-tournament-info__text {
+  font-size: 1.5rem;
+}
+
+.page-tournament-info__time {
+  font-size: 2.25rem;
+  font-weight: 700;
+}

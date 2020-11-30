@@ -4,7 +4,8 @@
     "defaultLang": "en",
     "api": {
       "prefix": "/api",
-      "serverUrl": "https://web70.xenforce.ru"
+      "serverUrl": "https://www.kibersport.it-effective.com",
+      "socketUrl": "127.0.0.1:6379"
     }
   }
 }

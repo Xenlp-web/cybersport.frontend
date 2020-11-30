@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import {getTournamentOptionsForAdminResponseSelector } from "@app/api/requests/changeTournament";
 
-const AdminTournamentInfo = (props) => {
-  if (!!props.infoTournament) {
+const AdminTournamentInfo = () => {
+  const tournamentOptionsForAdminResponse = useSelector(getTournamentOptionsForAdminResponseSelector);
+
+  if (!!tournamentOptionsForAdminResponse) {
     const {
       ended,
       game_id,
@@ -24,7 +28,7 @@ const AdminTournamentInfo = (props) => {
       mvp_award,
       lobby_id,
       lobby_pass
-    } = props.infoTournament;
+    } = tournamentOptionsForAdminResponse.tournamentInfo[0];
 
     return (
       <>

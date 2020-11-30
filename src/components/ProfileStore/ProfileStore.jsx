@@ -10,21 +10,21 @@ const ADVANTAGECARD = [
     images: 'img-1.png',
     title: '',
     tickets: 1,
-    price: 49,
+    price: 99,
     profit: false
   },
   {
     images: 'img-2.png',
     title: 'Берут чаще всего',
     tickets: 3,
-    price: 45,
+    price: 99,
     profit: false
   },
   {
     images: 'img-3.png',
     title: 'Самый выгодный вариант',
     tickets: 10,
-    price: 40,
+    price: 99,
     profit: true
   }
 ];
@@ -41,7 +41,7 @@ const StoreCards = () => {
         <Card.Body className="d-flex justify-content-end flex-column align-items-center">
           <Card.Title className="store_card-title" as="h6">{title}</Card.Title>
           <p className="store_card-full_price text-white">
-            <span className={profit ? 'tickets tickets--white' : 'tickets'}></span>
+            <span className={profit ? 'tickets tickets--white' : 'tickets'}> </span>
             {tickets} билет = <span className={profit ? '' : 'text-danger'}>{tickets * price} ₽</span>
           </p>
           <p className="store_card-price text-white">
@@ -65,9 +65,9 @@ const ProfileStore = () => {
   } = userData;
 
   return (
-    <Container>
+    <Container className="container--indent">
       <Row className="mt-6">
-        <Col xs={12} lg={6}>
+        <Col xs={12} xl={6}>
           <ProfileNavbar/>
           <Row>
             <div className="profile_store-info__wrap">

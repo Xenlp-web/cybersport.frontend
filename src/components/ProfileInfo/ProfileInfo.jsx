@@ -13,7 +13,7 @@ const ProfileInfo = () => {
   const logout = () => {
     localStorage.removeItem('Authorization');
     location.assign("/").reload();
-  }
+  };
 
   const {
     coins,
@@ -22,27 +22,45 @@ const ProfileInfo = () => {
     nickname,
     referal_code,
     tickets,
-    is_admin
+    is_admin,
+    email
   } = userData;
 
   const rp = 0;
   const rank = 0;
 
   return (
-    <Container>
-        <Row className="mt-6">
-          <Col lg={8} xl={6} className="mb-md-4 mb-xl-0">
+    <Container className="container--indent">
+        <Row className="mt-lg-6 mt-0">
+          <Col sm={12} xl={6} className="mb-md-4 mb-xl-0">
             <ProfileNavbar/>
             <div className="profile-info">
-              <Row className="align-items-center mb-4 d-none d-md-flex">
-                <Col xs={6}>
+              <Row className="align-items-center mb-4 d-flex">
+                <Col xs={12} md={6} className="align-items-center justify-content-center justify-content-lg-start d-flex mb-2 mb-md-0">
                   <span className="profile-info__nick">{nickname}</span>
+                  <Link className='btn-settings ml-3 d-lg-none' to="/settings">
+                    <span className="settings__icon"> </span>
+                  </Link>
                 </Col>
-                <Col xs={6}>
-                  <Button className="profile-info__notifications"><span className="notifications__icon"> </span>Настроить оповещания</Button>
+                <Col xs={12} md={6} className="text-center mb-3 d-lg-none">
+                  <span className="profile-info__email">{email}</span>
+                </Col>
+                <Col xs={12} md={6}>
+                  <Button className="profile-info__notifications mr-auto ml-auto ml-lg-0"><span className="notifications__icon"> </span>Настроить оповещания</Button>
                 </Col>
               </Row>
-              <Row className="order-sm-2">
+              <Row className="order-sm-2 d-lg-none mb-4">
+                <Col xs={6}>
+                  <Link className='btn btn-sm btn-danger w-100' to="/store">Купить билеты</Link>
+                </Col>
+                <Col xs={6}>
+                  <Link className='btn btn-sm btn-danger w-100' to="#">Вывести</Link>
+                </Col>
+                <Col xs={12} className="mt-3">
+                  <Link className='btn btn-sm btn-outline-light w-100' to="#">История транзакций</Link>
+                </Col>
+              </Row>
+              <Row className="order-sm-3">
                 <div className="profile-info__wrap">
                   <span className="profile-info__title">Рейтинг</span>
                   <span className="profile-info__descr">{rp}Rp</span>
@@ -99,7 +117,7 @@ const ProfileInfo = () => {
               </div>
             </div>
           </Col>
-          <Col lg={8} xl={6} className="d-none d-md-block">
+          <Col sm={12} xl={6} className="d-none d-md-block">
             <p className="mb-4 font-weight-bolder">История сыгранных турниров</p>
             <div className='h-tournaments-wrapper row flex-column'>
               <HistoryTournamentsCards />
@@ -108,11 +126,11 @@ const ProfileInfo = () => {
         </Row>
       {is_admin
         ? <div className='text-center mt-4'>
-          <Link to="/auto-tournaments" className="mb-3">войти в панель администратора</Link>
+          <Link to="/auto-tournaments" className="mb-3 btn btn-light">войти в панель администратора</Link>
           <br/>
-          <Link to="#" onClick={logout}>Выйти</Link>
+          <Link className='btn btn-light' to="#" onClick={logout}>Выйти</Link>
       </div>
-        : <div className='text-center mt-4'><Link to="#" onClick={logout}>Выйти</Link></div>
+        : <div className='text-center btn btn-light mt-4'><Link to="#" onClick={logout}>Выйти</Link></div>
       }
       </Container>
   )

@@ -1,31 +1,11 @@
-import React, {useCallback} from 'react';
-import { Card, Button, Col } from 'react-bootstrap';
-import {useDispatch} from "react-redux";
-import {doRegistrationTournamentRequestAction, doCancelRegistrationTournamentRequestAction} from "@app/api/requests/registrationTournament";
-
+import React from 'react';
+import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './tournaments-cards.scss';
-
-const game_id = 1;
 
 const TournamentsCards = (props) => {
   const CardInfo = props.tournamentCardInfo;
   const typeCard = props.type;
-
-  const dispatch = useDispatch();
-
-  const tournamentJoin = useCallback((tournament_id) => {
-    dispatch(doRegistrationTournamentRequestAction({
-      tournament_id: Number(tournament_id),
-      game_id: game_id
-    }))
-  }, []);
-
-  const tournamentCancel = useCallback((tournament_id) => {
-    dispatch(doCancelRegistrationTournamentRequestAction({
-      tournament_id: Number(tournament_id),
-      game_id: game_id
-    }))
-  }, []);
 
     const TournamentsCard = CardInfo.map(({
       img,
@@ -78,20 +58,16 @@ const TournamentsCards = (props) => {
                                 </span>
                             </div>
                             <Card.Footer>
-                                <Button variant={(typeCard === 'past') ? 'secondary' : participation !== null ? 'light' :'danger'}
-                                        data-id-tournament={tournament_id}
-                                        onClick={(typeCard === 'past') ? '' :
-                                          participation !== null ?
-                                            (event) => tournamentCancel(event.target.getAttribute('data-id-tournament')) :
-                                            (event) => tournamentJoin(event.target.getAttribute('data-id-tournament'))
-
-                                        }
+                                <Link className={(typeCard === 'past') ? 'btn btn-secondary disabled'
+                                  : participation !== null ? 'btn btn-light' :'btn btn-danger'}
+                                  disabled={(typeCard === 'past') ? 'disabled' : ''}
+                                  to={`/tournament/${tournament_id}`}
                                 >
                                   {(typeCard === 'past') ? 'Завершен' :
                                     participation !== null ? 'Отказать от участия' :
                                       'Участвовать за ' + tickets + ' билет'
                                   }
-                                </Button>
+                                </Link>
                             </Card.Footer>
                         </Card.Body>
                     </Card>

@@ -7,5 +7,8 @@ const getTournamentParticipants = ({tournament_id}) => api.get(ENDPOINTS.GET_TOU
 
 export const {
   forcedLoadDataAction: forcedLoadTournamentParticipantsDataAction,
-  responseSelector: getTournamentParticipantsResponseSelector
+  responseSelector: responseGetUsersForTournamentSelector,
+  requestFulfilledAction: requestGetUsersForTournamentFulfilledAction,
+  errorSelector: errorGetUsersForTournamentSelector,
+  requestRejectedAction: requestGetUsersForTournamentRejectedAction
 } = requestsFactory({ request: getTournamentParticipants, stateRequestKey: 'get_tournament_participants' });

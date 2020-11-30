@@ -7,4 +7,8 @@ const postRegistrationTournamentRequest = (data) => api.post(ENDPOINTS.JOIN_REGI
 
 export const {
   doRequestAction: doRegistrationTournamentRequestAction,
+  responseSelector: registrationForTheTournamentResponseSelector,
+  requestRejectedAction: requestRegistrationForTheTournamentRejectedAction,
+  errorSelector: errorRegistrationForTheTournamentSelector,
+  requestFulfilledAction: registrationTournamentFulfilledAction
 } = requestsFactory({ request: postRegistrationTournamentRequest, stateRequestKey: 'registration_tournament' });

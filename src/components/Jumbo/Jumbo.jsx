@@ -2,10 +2,12 @@ import React from 'react';
 import { Jumbotron, Container, Button } from 'react-bootstrap';
 import './jumbo.scss';
 
+import history from '@app/history';
+
 const ONLINE = 3455;
 
 const Jumbo = () => (
-    <div className='jumbotron__wrapper'>
+    <div className='jumbotron__wrapper mt-5'>
         <Jumbotron fluid>
             <Container>
                 <div className='text-white jumbotron__text-content d-flex align-items-start flex-column'>
@@ -20,7 +22,7 @@ const Jumbo = () => (
                         Бонусы / Разные режимы / Без комиссий
                     </p>
                     <div className="d-flex align-items-center">
-                        <Button className='mr-2 mr-sm-4' variant="danger" size="lg">Войти прямо сейчас</Button>
+                        <Button onClick={ () => history.push('/tournament')} className='mr-2 mr-sm-4' variant="danger" size="lg">Войти прямо сейчас</Button>
                         <span className='jumbotron__bonus'>+ получить бонус</span>
                     </div>
                 </div>

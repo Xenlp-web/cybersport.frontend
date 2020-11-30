@@ -43,7 +43,7 @@ const AdminUsers = () => {
 
   const dispatch = useDispatch();
 
-  useInit(() => forcedLoadUserInfoDataAction({user_id: activeUser}), [activeUser]);
+  useInit(() => forcedLoadUserInfoDataAction({query: activeUser}), [activeUser]);
 
   const getUserInfo = () => {
     userInfo = store.getState().requests.responses.get_user_info_by_admin.response;
@@ -127,13 +127,13 @@ const AdminUsers = () => {
       <Row>
         <Col lg={6} md={12} className="mb-3">
           <Form.Group className="participants-tournament d-flex align-items-center bg-white">
-            <Form.Control type="text" placeholder="ID турнира"
+            <Form.Control type="text" placeholder="ID игрока"
                           onChange={(event) => setActiveUser(event.target.value)}
             />
             <Button variant="warning" className="text-white px-3"
                     onClick={() => getUserInfo()}
             >Загрузить</Button>
-            <Button className="px-3">Очистить</Button>
+            {/*<Button className="px-3">Очистить</Button>*/}
           </Form.Group>
         </Col>
       </Row>
@@ -177,13 +177,13 @@ const AdminUsers = () => {
                       onClick={changeUserRefClass}
               >Отправить</Button>
             </Form.Group>
-            <Nav as="ul" className="user-list">
-              <Nav.Item>Реферальные классы:</Nav.Item>
-              <Nav.Item>0 - стандартный</Nav.Item>
-              <Nav.Item>1 - 5% от рефералов, 2 ранг рефералам</Nav.Item>
-              <Nav.Item>2 - 10% от рефералов, 2 ранг рефералам</Nav.Item>
-              <Nav.Item>3 - 0% от рефералов, 2 ранг рефералам</Nav.Item>
-            </Nav>
+            {/*<Nav as="ul" className="user-list">*/}
+              {/*<Nav.Item>Реферальные классы:</Nav.Item>*/}
+              {/*<Nav.Item>0 - стандартный</Nav.Item>*/}
+              {/*<Nav.Item>1 - 5% от рефералов, 2 ранг рефералам</Nav.Item>*/}
+              {/*<Nav.Item>2 - 10% от рефералов, 2 ранг рефералам</Nav.Item>*/}
+              {/*<Nav.Item>3 - 0% от рефералов, 2 ранг рефералам</Nav.Item>*/}
+            {/*</Nav>*/}
             <Form.Group className="users-row">
               <Form.Control type="text" placeholder="Реферальный код"
                             onChange={(event) => setRefCodeForPlayer(event.target.value)}

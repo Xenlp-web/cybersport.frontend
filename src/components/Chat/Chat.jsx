@@ -9,6 +9,7 @@ import {allMessageGlobalChatSelector} from "@app/selectors/chatMessageSelector";
 import {checkAuth} from "@app/selectors/checkAuth";
 import store from "@app/store/store";
 import useInit from "@app/utils/init";
+// import subscribeToTimer from "@app/utils/socket-io";
 
 const Chat = () => {
   const [messageText, setMessageText] = useState('');
@@ -48,10 +49,10 @@ const Chat = () => {
   });
 
   return (
-    <div className="chat-wrapper position-relative">
-      <Container>
+    <div className="chat-wrapper position-relative mb-4">
+      <Container className="container--indent">
         <Row>
-          <Col sm={12} lg={6}>
+          <Col sm={12} xl={6}>
             <div className="chat-container bg-white">
               <h2 className="text-dark">Чат</h2>
               <div className="message-wrapper">
@@ -71,13 +72,13 @@ const Chat = () => {
               }
             </div>
           </Col>
-          <Col sm={12} lg={6} className="position-relative">
-            <div className="row d-lg-flex d-none">
+          <Col sm={12} xl={6} className="position-relative">
+            <div className="row d-xl-flex d-none">
               <img className="chat-images" src={require("../../images/backgrounds/bg-chat.png").default} alt=""/>
             </div>
             <div className="chat-btn-group">
-              <Button variant="light" className="mr-2">Общайтесь в чате</Button>
-              <Button variant="light">Делитесь эмоциями</Button>
+              <Button variant="light" className="mr-2" disabled="disabled">Общайтесь в чате</Button>
+              <Button variant="light" disabled="disabled">Делитесь эмоциями</Button>
             </div>
           </Col>
         </Row>

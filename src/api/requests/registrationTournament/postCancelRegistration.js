@@ -7,4 +7,8 @@ const postCancelRegistrationTournamentRequest = (data) => api.post(ENDPOINTS.CAN
 
 export const {
   doRequestAction: doCancelRegistrationTournamentRequestAction,
+  responseSelector: cancelRegistrationForTheTournamentResponseSelector,
+  requestRejectedAction: requestCancelRegistrationForTheTournamentRejectedAction,
+  errorSelector: errorCancelRegistrationForTheTournamentSelector,
+  requestFulfilledAction: cancelRegistrationTournamentFulfilledAction
 } = requestsFactory({ request: postCancelRegistrationTournamentRequest, stateRequestKey: 'registration_tournament' });

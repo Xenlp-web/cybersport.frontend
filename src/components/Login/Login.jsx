@@ -1,13 +1,11 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {Link} from "react-router-dom";
 import {Modal, Button, Form} from 'react-bootstrap';
 
 import {doSignInRequestAction} from '@app/api/requests/sign-in';
 import {loadAllRegionsDataAction} from '@app/api/requests/regions';
 import {doRegistrationRequestAction} from '@app/api/requests/registration';
 import {allRegionsSelector} from '@app/selectors/allRegionsSelector';
-import {signInSelector} from "@app/selectors/singInSelector";
 
 import './login.scss';
 
@@ -22,8 +20,13 @@ const Login = (props) => {
   const [userPassword, setUserPassword] = useState('');
   const [userPasswordConfirm, setUserPasswordConfirm] = useState('');
   const [userLocationId, setUserLocationId] = useState(0);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const dispatch = useDispatch();
+
+  const changeButtonDisabled = useCallback(() => {
+    buttonDisabled ? setButtonDisabled(false) : setButtonDisabled(true);
+  }, [buttonDisabled]);
 
   const signIn = useCallback( () => {
     dispatch(doSignInRequestAction({
@@ -31,9 +34,6 @@ const Login = (props) => {
       password: userPassword
     }));
   }, [userEmail, userPassword]);
-
-  const test = useSelector(signInSelector);
-  // console.log(test);
 
   const getRegionsAll = useCallback(() => {
     dispatch(loadAllRegionsDataAction());
@@ -67,9 +67,6 @@ const Login = (props) => {
 
   return(
     <>
-      {/*<Link to="/info">profile</Link>{' '}*/}
-      {/*<Link to="/auto-tournaments">admin</Link>*/}
-
       <Modal
         size="sm"
         show={singInShow}
@@ -133,12 +130,15 @@ const Login = (props) => {
         </Form.Group>
 
           <div className="custom-control custom-checkbox">
-            <input type="checkbox" id="custom-checkbox" className="custom-control-input"/>
+            <input type="checkbox" id="custom-checkbox"
+                   onChange={() => changeButtonDisabled()}
+                   className="custom-control-input"/>
             <label title="" htmlFor="custom-checkbox" className="custom-control-label">
-              Я принимаю <a href="#" className="modal-link text-danger">пользовательское соглашение</a>
+              Я принимаю <a href="#" className="modal-link text-danger"
+            >пользовательское соглашение</a>
             </label>
           </div>
-          <Button variant="danger" onClick={registrationSubmit}>Вход</Button>
+          <Button variant="danger" onClick={registrationSubmit} disabled={buttonDisabled}>Вход</Button>
         </Modal.Body>
       </Modal>
     </>
