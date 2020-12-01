@@ -9,7 +9,12 @@ import {allMessageGlobalChatSelector} from "@app/selectors/chatMessageSelector";
 import {checkAuth} from "@app/selectors/checkAuth";
 import store from "@app/store/store";
 import useInit from "@app/utils/init";
-// import subscribeToTimer from "@app/utils/socket-io";
+
+import echo from "@app/utils/socket-io";
+
+const userChannel = echo.private(`cybersport_api_database_global-chat`);
+
+console.log(userChannel);
 
 const Chat = () => {
   const [messageText, setMessageText] = useState('');

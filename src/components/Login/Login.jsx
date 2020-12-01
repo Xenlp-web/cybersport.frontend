@@ -122,11 +122,11 @@ const Login = (props) => {
             <Form.Control size="lg" type="password" placeholder="Повторите пароль"
                           onChange={(event) => setUserPasswordConfirm(event.target.value)}
             />
-            <Form.Control as="select"
-                          onChange={(event) => setUserLocationId(event.target.value)}
-            >
-              {optionsRegions}
-          </Form.Control>
+            {/*<Form.Control as="select"*/}
+                          {/*onChange={(event) => setUserLocationId(event.target.value)}*/}
+            {/*>*/}
+              {/*{optionsRegions}*/}
+            {/*</Form.Control>*/}
         </Form.Group>
 
           <div className="custom-control custom-checkbox">

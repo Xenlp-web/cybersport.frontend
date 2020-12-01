@@ -123,6 +123,15 @@
   height: 24px;
 }
 
+@media screen and (min-width: 1024px) {
+  .profile-info-btn-group .btn-sm {
+    padding: 0.5rem 0;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+  }
+}
+
 @media screen and (max-width: 1919px) {
   .profile-info-ref__descr.profile-info-ref__descr--desktop {
     font-size: 10px;

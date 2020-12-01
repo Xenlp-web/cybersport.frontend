@@ -80,9 +80,14 @@ const Header = (props) => {
     <Navbar fixed="top" bg="dark" variant="dark" expand="lg">
       <Container>
         <Row className='align-items-center w-100 justify-content-between m-0 position-relative'>
-          <NavLink className='avatar-mobile d-inline-block d-lg-none' to="/info">
-            <Image src={require('../../Icons/avatar-default.svg').default} />
-          </NavLink>
+          {AUTH
+            ? <NavLink className='avatar-mobile d-inline-block d-lg-none' to="/info">
+                <Image src={require('../../Icons/avatar-default.svg').default} />
+              </NavLink>
+            : <NavLink className='avatar-mobile d-inline-block d-lg-none' onClick={() => setSingInShow(true)} to="#">
+                <Image src={require('../../Icons/avatar-default.svg').default} />
+              </NavLink>
+          }
           <NavLink className='logo logo--header mr-4' to="/">
             <Image src={LogoIcon} />
           </NavLink>
@@ -91,7 +96,7 @@ const Header = (props) => {
                            className={(activeNavbar !== 'main') ? 'main-navbar--hidden' : 'main-navbar--active'}>
             <Nav className="mr-auto" as="ul">
               {navLinks}
-              <div className="p-2">
+              <div className="p-2 mb-3">
                 <span className="lang_icon mr-3">
                   <img  src={require('../../Icons/eu.png').default} alt=""/>
                 </span>
@@ -99,6 +104,10 @@ const Header = (props) => {
                   <img src={require('../../Icons/us.png').default} alt=""/>
                 </span>
               </div>
+              {AUTH
+                ? ''
+                : <Button className="d-lg-none" variant="danger" onClick={() => setSingInShow(true)}>Войти</Button>
+              }
             </Nav>
           </Navbar.Collapse>
           <Navbar className={(activeNavbar !== 'main') ? 'second-navbar--active p-0' : 'second-navbar--hidden p-0'}>
@@ -107,10 +116,6 @@ const Header = (props) => {
             </Nav>
           </Navbar>
           <div className='d-none d-lg-flex navbar__right ml-auto align-content-center'>
-            {/*<Button className={AUTH ? 'mr-5 px-4' : 'mr-4 px-4'} variant="light">*/}
-                {/*<span className="rec bg-danger rounded-circle d-inline-block mr-2"> </span>*/}
-                {/*Прямой эфир*/}
-            {/*</Button>*/}
             {AUTH
               ? userInfo(userData)
               : <Button variant="danger" onClick={() => setSingInShow(true)}>Войти</Button>

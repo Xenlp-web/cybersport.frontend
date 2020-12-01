@@ -5,7 +5,7 @@
     "api": {
       "prefix": "/api",
       "serverUrl": "https://www.kibersport.it-effective.com",
-      "socketUrl": "127.0.0.1:6379"
+      "socketUrl": "www.kibersport.it-effective.com"
     }
   }
 }

@@ -1,6 +1,12 @@
 import io from 'socket.io-client';
+import Echo from 'laravel-echo';
 import config from '@config/app/default';
 
-const socket = io.connect(config.common.api.socketUrl);
+let echo = new Echo({
+  broadcaster: 'socket.io',
+  host: config.common.api.socketUrl,
+  client: io,
+  protocol: "http"
+});
 
-export default subscribeToTimer;
+export default echo;
